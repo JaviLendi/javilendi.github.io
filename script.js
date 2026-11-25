@@ -74,7 +74,7 @@ if (year) year.textContent = new Date().getFullYear();
         <h3>${escapeHTML(repo.name.replaceAll('-', ' '))}</h3>
         <p>${escapeHTML(repo.description || 'Public repository by the portfolio owner. Open the project wiki to explore its README and repository details.')}</p>
         <div class="repo-tags">${repoTags(repo)}</div>
-        <div class="repo-card-foot"><span>★ ${Number(repo.stargazers_count || 0)}　⑂ ${Number(repo.forks_count || 0)}</span><b>OPEN WIKI ↗</b></div>
+        <div class="repo-card-foot"><span>★ ${Number(repo.stargazers_count || 0)}　⑂ ${Number(repo.forks_count || 0)}</span><b>OPEN WIKI <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#move-up-right"></use></svg></b></div>
       </button>`).join('') : '<div class="repo-empty">No repositories match this search. Try a different keyword or filter.</div>';
     repoStatus.textContent = `${items.length} of ${repositories.length} public repositories · Updated from GitHub`;
   };
@@ -164,7 +164,7 @@ if (year) year.textContent = new Date().getFullYear();
       const decoded = new TextDecoder('utf-8').decode(Uint8Array.from(markdown, c=>c.charCodeAt(0)));
       wikiContent.innerHTML = markdownToHTML(decoded, repo);
     } catch (error) {
-      wikiContent.innerHTML = `<p>README could not be loaded from the GitHub API (${escapeHTML(error.message)}). You can still explore the project files and documentation directly.</p><p><a href="${escapeHTML(repo.html_url)}" target="_blank" rel="noreferrer">Open ${escapeHTML(repo.name)} on GitHub ↗</a></p>`;
+      wikiContent.innerHTML = `<p>README could not be loaded from the GitHub API (${escapeHTML(error.message)}). You can still explore the project files and documentation directly.</p><p><a href="${escapeHTML(repo.html_url)}" target="_blank" rel="noreferrer">Open ${escapeHTML(repo.name)} on GitHub <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#move-up-right"></use></svg></a></p>`;
     }
   };
   const closeWiki = () => { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.classList.remove('wiki-open'); lastFocused?.focus?.(); };
@@ -177,7 +177,7 @@ if (year) year.textContent = new Date().getFullYear();
   fetch(`https://api.github.com/users/${owner}/repos?type=owner&sort=updated&per_page=100`,{headers:{Accept:'application/vnd.github+json'}})
     .then(response=>{if(!response.ok)throw new Error(`GitHub API returned ${response.status}`);return response.json();})
     .then(data=>{repositories=data.sort((a,b)=>new Date(b.updated_at)-new Date(a.updated_at));renderRepos();})
-    .catch(error=>{repoStatus.classList.add('error');repoStatus.textContent=`Could not load GitHub repositories (${error.message}). Check your connection or open GitHub directly.`;repoGrid.innerHTML='<div class="repo-empty">The repository list is loaded live from GitHub. Visit <a href="https://github.com/JaviLendi?tab=repositories" target="_blank" rel="noreferrer">github.com/JaviLendi ↗</a> to browse projects.</div>';});
+    .catch(error=>{repoStatus.classList.add('error');repoStatus.textContent=`Could not load GitHub repositories (${error.message}). Check your connection or open GitHub directly.`;repoGrid.innerHTML='<div class="repo-empty">The repository list is loaded live from GitHub. Visit <a href="https://github.com/JaviLendi?tab=repositories" target="_blank" rel="noreferrer">github.com/JaviLendi <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#move-up-right"></use></svg></a> to browse projects.</div>';});
 })();
 
 
