@@ -1,0 +1,43 @@
+.hero-loading {
+  position: absolute;
+  z-index: 2;
+  inset: 42px 0;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 14px;
+  color: var(--muted);
+  background: rgba(10, 15, 22, 0.96);
+  font: 10px var(--mono);
+  letter-spacing: 1px;
+}
+
+.hero-loading__indicator {
+  width: 30px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(166, 220, 225, 0.22);
+  border-top-color: var(--cyan);
+  border-radius: 50%;
+  animation: hero-loading-spin 0.9s linear infinite;
+}
+
+.hero-loading.is-error {
+  color: var(--orange);
+}
+
+.hero-loading.is-error .hero-loading__indicator {
+  border-color: var(--orange);
+  animation: none;
+}
+
+.hero-loading.is-error:not(.is-file-required) .hero-loading__indicator {
+  display: none;
+}
+
+@keyframes hero-loading-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-loading__indicator { animation: none; }
+}

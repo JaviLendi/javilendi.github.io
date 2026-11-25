@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1115" />
+    <title>Eurofighter CFD Streamlines | Javier Lendínez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="viewer.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="wordmark" href="../index.html" aria-label="Javier Lendínez portfolio">JL<span>.</span></a>
+        <a class="back-link" href="../index.html#projects">Portfolio <span aria-hidden="true">↗</span></a>
+      </header>
+
+      <main>
+        <section class="heading" aria-labelledby="page-title">
+          <p class="eyebrow">CFD / POST-PROCESSING / 01</p>
+          <div class="heading-row">
+            <h1 id="page-title">External flow</h1>
+            <p class="run-stamp">SIMPLEFOAM <span>·</span> 200 ITERATIONS</p>
+          </div>
+          <p class="subheading">Eurofighter Typhoon · steady RANS · 30 m/s · 0° AoA</p>
+        </section>
+
+        <section class="viewer" aria-label="Interactive three-dimensional CFD visualization">
+          <canvas id="scene" aria-label="Static Eurofighter STL with animated CFD streamline particles"></canvas>
+          <p class="load-state" id="load-state" role="status">Loading aircraft and streamline data…</p>
+          <div class="scene-tag"><span id="mesh-resolution">LOADING STL…</span> <b>·</b> EXPLORATORY CFD · NOT VALIDATED</div>
+          <div class="axis-key" aria-hidden="true"><span>X</span><span>Y</span><span>Z</span></div>
+        </section>
+
+        <section class="control-row" aria-label="Visualization controls">
+          <div class="commands">
+            <button id="toggle-flow" type="button" aria-pressed="false" disabled>Pause flow</button>
+            <button id="reset-camera" type="button" disabled>Reset camera</button>
+          </div>
+          <label class="speed-control" for="flow-speed">
+            <span>Particle speed</span>
+            <input id="flow-speed" type="range" min="0.2" max="2" step="0.1" value="1" disabled />
+            <output id="speed-value" for="flow-speed">1.0×</output>
+          </label>
+          <div class="flow-legend" aria-label="Streamline colors use the 10th to 90th percentile of OpenFOAM velocity; values outside the range are clamped">
+            <span>LOW ≤ <b id="speed-min">-- m/s</b></span><i aria-hidden="true"></i><span>HIGH ≥ <b id="speed-max">-- m/s</b></span>
+          </div>
+        </section>
+
+        <footer class="disclaimer">
+          <span>30 m/s inlet <b>·</b> k-omega SST</span>
+          <span>Exploratory steady RANS; mesh contains concave cells. Not for design or flight-performance use.</span>
+        </footer>
+      </main>
+    </div>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/three@0.146.0/build/three.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/controls/OrbitControls.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/loaders/STLLoader.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/utils/BufferGeometryUtils.js" crossorigin="anonymous"></script>
+    <script defer src="../assets/eurofighter-mesh-data.js"></script>
+    <script defer src="results/eurofighter-streamlines-t200-data.js"></script>
+    <script defer src="viewer.js"></script>
+  </body>
+</html>

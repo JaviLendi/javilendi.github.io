@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0f16">
+  <meta name="description" content="I contributed to Python source and constant-doublet panel solvers for a NACA 0112 airfoil, with pressure and streamline comparisons against XFOIL.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="2D Panel-Method Solvers | Javier Lendínez">
+  <meta property="og:description" content="I contributed to our team's comparison of source and doublet potential-flow panel methods for a NACA 0112 section.">
+  <meta property="og:url" content="https://javilendi.github.io/projects/panel-method.html">
+  <meta property="og:image" content="https://javilendi.github.io/assets/og-portfolio.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://javilendi.github.io/projects/panel-method.html">
+  <title>2D Panel-Method Solvers | Javier Lendínez</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../case-studies.css">
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="topbar">
+    <a class="logo" href="../index.html" aria-label="Javier Lendínez portfolio">JL<span>.</span></a>
+    <nav id="primary-nav" aria-label="Main navigation"><a href="../index.html#projects">Projects</a><a href="../index.html#github-projects">GitHub</a><a href="../index.html#experience">Experience</a><a href="../index.html#contact">Contact</a></nav>
+    <a class="download" href="../assets/javier-lendinez-cv.pdf" download>Download CV ↓</a>
+    <button class="menu" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+  </header>
+  <main id="main-content" class="wrap">
+    <section class="case-hero">
+      <div class="case-breadcrumb"><a href="../index.html">Portfolio</a> / <a href="../index.html#projects">Projects</a> / Panel methods</div>
+      <div class="case-kicker">08 / AERODYNAMICS & NUMERICAL METHODS</div>
+      <h1>2D <em>panel-method solvers</em></h1>
+      <p class="case-deck">I contributed to our team's Python source and constant-doublet panel solvers for potential flow around a NACA 0112 airfoil, including pressure and streamline comparisons with XFOIL.</p>
+      <div class="case-tags"><span>Python</span><span>Potential flow</span><span>Source panels</span><span>Doublets</span><span>XFOIL</span></div>
+      <div class="case-meta">
+        <div><dt>Role</dt><dd>Core contributor · team of four</dd></div>
+        <div><dt>Course</dt><dd>Advanced Aerodynamics · February 2026</dd></div>
+        <div><dt>Test case</dt><dd>NACA 0112 · 198 panels · α = 4°</dd></div>
+      </div>
+    </section>
+    <div class="case-layout">
+      <div class="case-content">
+        <section class="study-section" id="challenge">
+          <div class="study-number">01 — THE CHALLENGE</div>
+          <h2>Compare two ways to represent an airfoil boundary</h2>
+          <p>Our team implemented two panel formulations for two-dimensional, incompressible potential flow: distributed sources and constant-strength doublets. We discretised an airfoil contour and solved a linear system to estimate the flow field and aerodynamic quantities.</p>
+          <p>We used a symmetric NACA 0112 section at a four-degree angle of attack. I completed the work with Mario Barrio Alonso, Juan Ramírez Fernández, and Begoña Santomé Ferragut. My contribution was fundamental, although our report does not assign specific tasks to each person.</p>
+        </section>
+        <section class="study-section" id="method">
+          <div class="study-number">02 — METHOD</div>
+          <h2>Discretise, solve, and inspect the surface quantities</h2>
+          <p>For our constant-doublet formulation, we used a Dirichlet boundary condition and imposed the Kutta condition at the trailing edge. I worked with a 198-panel discretisation, panel influence coefficients, and the solution for singularity strengths used to derive tangential velocity and pressure coefficient distributions.</p>
+          <p>We compared a separate source-panel formulation under the same geometry and flow condition. Our workflow generated panel normals, control points, pressure plots, and streamline visualisations so that we could inspect the numerical model.</p>
+          <p>Running both formulations gave me a way to compare how a different singularity model changes the surface solution and the surrounding flow field. I treated the panel geometry and boundary-condition setup as part of the result, because a coefficient is only interpretable alongside the discretisation and assumptions that produced it.</p>
+          <code class="case-equation">C<sub>p</sub> = 1 − (V<sub>t</sub> / V<sub>∞</sub>)²</code>
+          <figure class="case-figure">
+            <img src="../assets/case-studies/panel-method/geometry.webp" alt="NACA 0112 contour, panel normals, and control points from our doublet-panel implementation" width="1018" height="353" loading="lazy">
+            <figcaption>I used this panel geometry to inspect normals and control-point placement before solving.</figcaption>
+          </figure>
+          <div class="case-note">Our model assumes inviscid potential flow. I do not interpret its drag output as real viscous airfoil drag.</div>
+        </section>
+        <section class="study-section" id="comparison">
+          <div class="study-number">03 — COMPARISON</div>
+          <h2>Use XFOIL as a reference, then reconcile the report</h2>
+          <p>We compared lift coefficient and pressure-coefficient trends with XFOIL. In our results section, the doublet formulation gives C<sub>L</sub> = 0.432058 and the source formulation gives C<sub>L</sub> = 0.482297, against an XFOIL reference of 0.4830.</p>
+          <p>My report contains an inconsistency: its conclusion attributes the source-method value to the developed model, while other sections present the doublet result. I show both values as they appear in the report, not as a verified validation result.</p>
+          <div class="case-meta">
+            <div><dt>Doublet result in results section</dt><dd>C<sub>L</sub> = 0.432058</dd></div>
+            <div><dt>Source result in comparison table</dt><dd>C<sub>L</sub> = 0.482297</dd></div>
+            <div><dt>XFOIL reference</dt><dd>C<sub>L</sub> = 0.4830</dd></div>
+          </div>
+          <div class="case-gallery">
+            <figure class="case-figure">
+              <img src="../assets/case-studies/panel-method/cp-doublets.webp" alt="Pressure-coefficient distribution from our constant-doublet panel method" width="1035" height="734" loading="lazy">
+              <figcaption>Pressure coefficient from our doublet formulation.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="../assets/case-studies/panel-method/cp-sources.webp" alt="Pressure-coefficient distribution from our source-panel method" width="1035" height="734" loading="lazy">
+              <figcaption>Pressure coefficient from our source-panel formulation.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="../assets/case-studies/panel-method/streamlines-doublets.webp" alt="NACA 0112 streamlines from our doublet-panel solution" width="1035" height="566" loading="lazy">
+              <figcaption>Streamlines from our doublet solution.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="../assets/case-studies/panel-method/streamlines-sources.webp" alt="NACA 0112 streamlines from our source-panel solution" width="1035" height="566" loading="lazy">
+              <figcaption>Streamlines from our source-panel solution.</figcaption>
+            </figure>
+          </div>
+          <div class="case-note">Before I publish an accuracy percentage, I need to check the source code, identify which formulation the conclusion refers to, and regenerate the comparison.</div>
+        </section>
+        <section class="study-section" id="limitations">
+          <div class="study-number">04 — LIMITATIONS</div>
+          <h2>Separate potential-flow results from real drag</h2>
+          <p>Our model does not resolve boundary-layer growth, transition, or flow separation. I therefore do not interpret the doublet formulation's reported C<sub>D</sub> = 0.028778 as physical airfoil drag.</p>
+          <p>My next checks would be panel-refinement studies, verification of the Kutta condition and force integration, and a comparison using identical geometry and panel distributions across both formulations and XFOIL.</p>
+        </section>
+        <section class="study-section" id="reflection">
+          <div class="study-number">05 — ENGINEERING TAKEAWAY</div>
+          <h2>Validation is part of the solver</h2>
+          <p>Implementing multiple formulations for one test case taught me to compare assumptions, numerical behaviour, and intermediate fields rather than relying on a single headline coefficient.</p>
+          <a class="case-next" href="composite-structures.html">Next case study: Composite Structures →</a>
+        </section>
+      </div>
+      <aside class="study-aside" aria-label="Case study navigation">
+        <h2>ON THIS PAGE</h2>
+        <nav class="study-toc"><a href="#challenge">01 Challenge</a><a href="#method">02 Method</a><a href="#comparison">03 Comparison</a><a href="#limitations">04 Limits</a><a href="#reflection">05 Takeaway</a></nav>
+        <a class="study-source" href="../index.html#projects">Explore all projects ↓</a>
+      </aside>
+    </div>
+  </main>
+  <footer class="case-footer wrap"><a href="../index.html#projects">← All Projects</a><span>Javier Lendínez · Aerospace Engineering</span></footer>
+  <script src="project-pages.js" defer></script>
+</body>
+</html>
