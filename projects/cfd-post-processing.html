@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0f16">
+  <meta name="description" content="I built an exploratory OpenFOAM visualization workflow around a Eurofighter mesh, parsing VTP streamlines for velocity-coloured 3D post-processing.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="External-Flow Post-Processing | Javier Lendínez">
+  <meta property="og:description" content="I built an exploratory steady-RANS visualization workflow and documented its mesh and solver limitations.">
+  <meta property="og:url" content="https://javilendi.github.io/projects/cfd-post-processing.html">
+  <meta property="og:image" content="https://javilendi.github.io/CFD/results/eurofighter-streamlines-t200.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://javilendi.github.io/projects/cfd-post-processing.html">
+  <title>External-Flow Post-Processing | Javier Lendínez</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../case-studies.css">
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="topbar">
+    <a class="logo" href="../index.html" aria-label="Javier Lendínez portfolio">JL<span>.</span></a>
+    <nav id="primary-nav" aria-label="Main navigation"><a href="../index.html#projects">Projects</a><a href="../index.html#github-projects">GitHub</a><a href="../index.html#experience">Experience</a><a href="../index.html#contact">Contact</a></nav>
+    <a class="download" href="../assets/javier-lendinez-cv.pdf" download>Download CV ↓</a>
+    <button class="menu" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+  </header>
+  <main id="main-content" class="wrap">
+    <section class="case-hero">
+      <div class="case-breadcrumb"><a href="../index.html">Portfolio</a> / <a href="../index.html#projects">Projects</a> / CFD post-processing</div>
+      <div class="case-kicker">11 / CFD & ENGINEERING VISUALISATION</div>
+      <h1>External-flow <em>post-processing</em></h1>
+      <p class="case-deck">I turn sampled VTP streamlines and an indexed aircraft mesh into a static image and an interactive 3D visualisation.</p>
+      <div class="case-tags"><span>OpenFOAM simpleFoam</span><span>k-omega SST</span><span>Python</span><span>VTP</span><span>3D visualisation</span></div>
+      <div class="case-meta">
+        <div><dt>Inlet</dt><dd>30 m/s · 0° angle of attack</dd></div>
+        <div><dt>Run</dt><dd>Steady RANS · 200 iterations</dd></div>
+        <div><dt>Status</dt><dd>Exploratory · not validated</dd></div>
+      </div>
+    </section>
+    <div class="case-layout">
+      <div class="case-content">
+        <section class="study-section" id="challenge">
+          <div class="study-number">01 — THE CHALLENGE</div>
+          <h2>Make a large CFD sample inspectable in a browser</h2>
+          <p>I wrote a post-processing workflow for OpenFOAM streamline samples stored as VTP files. It reads the samples, associates velocity magnitude with each point, and renders coloured line segments around an aircraft surface.</p>
+          <p>I also built an indexed mesh bundle from an STL. Before rendering, my viewer reconstructs the surface from quantised grid coordinates, origin, step size, and face indices.</p>
+          <p>In the VTP reader, I decode the point coordinates, line connectivity and offsets, and the velocity vector array. I split the connectivity into individual polylines, calculate speed from each velocity vector, and carry the sampled values into the renderer so that colour is attached to the local streamline segments.</p>
+          <figure class="case-figure">
+            <img src="../CFD/results/eurofighter-streamlines-t200.png" alt="Exploratory OpenFOAM streamline visualization around the Eurofighter mesh, coloured by velocity magnitude" width="1419" height="1245" fetchpriority="high">
+            <figcaption>I saved this 200-iteration sample to inspect the workflow. Colours show sampled velocity magnitude, not a validated aerodynamic result.</figcaption>
+          </figure>
+        </section>
+        <section class="study-section" id="workflow">
+          <div class="study-number">02 — POST-PROCESSING WORKFLOW</div>
+          <h2>Decode, map, and render</h2>
+          <div class="process-flow" role="img" aria-label="CFD post-processing workflow from OpenFOAM VTP and indexed mesh to coloured streamline rendering">
+            <div class="flow-step"><b>01 / SAMPLE</b><span>OpenFOAM streamline VTP files</span></div>
+            <div class="flow-step"><b>02 / DECODE</b><span>Points, connectivity, offsets, and velocity</span></div>
+            <div class="flow-step"><b>03 / MAP</b><span>Velocity magnitude along each line segment</span></div>
+            <div class="flow-step"><b>04 / RENDER</b><span>3D surface and coloured streamlines</span></div>
+          </div>
+          <p>My Python renderer exports a PNG and an optional compressed JavaScript bundle for the interactive viewer. I generate the aircraft mesh bundle separately with <code>CFD/build_mesh_bundle.py</code>.</p>
+          <p>To make the surface practical to load in a browser, I weld duplicate STL vertices, quantise their coordinates, keep indexed triangle faces, and gzip the compact payload. The viewer can then reconstruct the mesh without loading the original large STL, while the streamline data remains a separate bundle.</p>
+          <a class="case-next" href="../CFD/viewer.html">Open the interactive CFD viewer ↗</a>
+        </section>
+        <section class="study-section" id="setup">
+          <div class="study-number">03 — SIMULATION SETUP</div>
+          <h2>Record the run conditions alongside the picture</h2>
+          <ul>
+            <li>I ran OpenFOAM <code>simpleFoam</code> as an incompressible, steady RANS case with k-omega SST.</li>
+            <li>My demonstration inlet was 30 m/s at 0° angle of attack, with air density set to 1.225 kg/m³.</li>
+            <li>I saved 62 streamlines from two spanwise seed planes using a mesh of 54,815 cells.</li>
+          </ul>
+          <div class="case-note">These values describe my stored demonstration case, not an operating envelope or an aircraft-performance estimate.</div>
+        </section>
+        <section class="study-section" id="limitations">
+          <div class="study-number">04 — LIMITATIONS</div>
+          <h2>Do not read this image as aerodynamic validation</h2>
+          <p>My stored 200-iteration run is incomplete for engineering conclusions. <code>checkMesh</code> reported 3,006 concave cells and failed a mesh check. I have not validated the geometry, mesh, turbulence setup, or convergence against trusted aerodynamic data.</p>
+          <p>I use this visualisation only for file handling, mesh presentation, and post-processing development. I do not use it to make design decisions, flight-performance claims, or comparisons with certified aircraft data.</p>
+        </section>
+        <section class="study-section" id="reflection">
+          <div class="study-number">05 — ENGINEERING TAKEAWAY</div>
+          <h2>Visual clarity does not replace solution quality</h2>
+          <p>I can make a flow field easier to inspect with a clear 3D rendering, but the mesh-quality failure and limited iteration count remain central to interpreting it. My next engineering step is to repair and validate the case, not infer performance from the image.</p>
+          <a class="case-next" href="vlmpy.html">Next case study: VLMPy →</a>
+        </section>
+      </div>
+      <aside class="study-aside" aria-label="Case study navigation">
+        <h2>ON THIS PAGE</h2>
+        <nav class="study-toc"><a href="#challenge">01 Challenge</a><a href="#workflow">02 Workflow</a><a href="#setup">03 Setup</a><a href="#limitations">04 Limits</a><a href="#reflection">05 Takeaway</a></nav>
+        <a class="study-source" href="../CFD/README.md">Read CFD notes ↗</a>
+      </aside>
+    </div>
+  </main>
+  <footer class="case-footer wrap"><a href="../index.html#projects">← All Projects</a><span>Javier Lendínez · Aerospace Engineering</span></footer>
+  <script src="project-pages.js" defer></script>
+</body>
+</html>

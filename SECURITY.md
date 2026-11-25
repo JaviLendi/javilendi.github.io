@@ -10,4 +10,3 @@
 | < 4.0   | :x:                |
 
 ## Reporting a Vulnerability
-

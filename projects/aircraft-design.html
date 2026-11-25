@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0f16">
+  <meta name="description" content="I completed a three-stage team study covering fuselage sizing, cruise-polar estimation, and wing and powerplant selection.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Preliminary Aircraft Design | Javier Lendínez">
+  <meta property="og:description" content="I connected fuselage layout, cruise drag, and wing sizing across a team aircraft-design sequence.">
+  <meta property="og:url" content="https://javilendi.github.io/projects/aircraft-design.html">
+  <meta property="og:image" content="https://javilendi.github.io/assets/og-portfolio.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://javilendi.github.io/projects/aircraft-design.html">
+  <title>Preliminary Aircraft Design | Javier Lendínez</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../case-studies.css">
+  <style>
+    .design-summary-grid,.design-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1.5rem 0}
+    .design-summary-grid article,.design-metrics>div{padding:1rem;border:1px solid var(--line,rgba(255,255,255,.14));border-radius:1rem;background:rgba(127,127,127,.045)}
+    .design-summary-grid article span,.design-metrics span{display:block;font:500 .68rem/1.4 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase;opacity:.72}
+    .design-summary-grid article strong,.design-metrics strong{display:block;margin:.4rem 0;font-size:1.05rem}
+    .design-summary-grid article p{margin:0;font-size:.88rem;opacity:.78}
+    .design-gallery{display:grid;gap:2.2rem;margin-top:2rem}
+    .design-gallery-heading{max-width:820px;margin:1rem 0}
+    .design-gallery-heading h3{margin:0 0 .5rem;font-size:1.2rem}
+    .design-gallery-heading p{margin:0;line-height:1.7;opacity:.82}
+    .design-gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem;align-items:start}
+    .design-gallery-grid--four{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .design-gallery-grid .case-figure{min-width:0;margin:0}
+    .design-gallery-grid img{display:block;width:100%;height:auto;max-height:480px;object-fit:contain;border-radius:.85rem;background:rgba(0,0,0,.12)}
+    .design-gallery-grid figcaption{margin-top:.7rem;line-height:1.6;font-size:.88rem}
+    .design-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media(max-width:900px){.design-gallery-grid--four{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:680px){.design-gallery-grid,.design-gallery-grid--four,.design-summary-grid,.design-metrics{grid-template-columns:1fr}}
+  </style>
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="topbar">
+    <a class="logo" href="../index.html" aria-label="Javier Lendínez portfolio">JL<span>.</span></a>
+    <nav id="primary-nav" aria-label="Main navigation"><a href="../index.html#projects">Projects</a><a href="../index.html#github-projects">GitHub</a><a href="../index.html#experience">Experience</a><a href="../index.html#contact">Contact</a></nav>
+    <a class="download" href="../assets/javier-lendinez-cv.pdf" download>Download CV ↓</a>
+    <button class="menu" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+  </header>
+  <main id="main-content" class="wrap">
+    <section class="case-hero">
+      <div class="case-breadcrumb"><a href="../index.html">Portfolio</a> / <a href="../index.html#projects">Projects</a> / Aircraft design</div>
+      <div class="case-kicker">05 / AIRCRAFT & FLIGHT</div>
+      <h1>Preliminary <em>aircraft design</em></h1>
+      <p class="case-deck">Three team studies covering a 170-passenger fuselage concept, cruise drag-polar estimation and an Airbus A350 wing and powerplant redesign.</p>
+      <div class="case-tags"><span>Aircraft sizing</span><span>Cruise polar</span><span>Wing design</span><span>Propulsion</span><span>Team project</span></div>
+      <div class="case-meta">
+        <div><dt>Role</dt><dd>Core contributor · team of four</dd></div>
+        <div><dt>Programme</dt><dd>B.Sc. Aerospace Engineering · UAX</dd></div>
+        <div><dt>Scope</dt><dd>Three connected evaluation projects · 2024–2025</dd></div>
+      </div>
+    </section>
+    <div class="case-layout">
+      <div class="case-content">
+        <section class="study-section" id="challenge">
+          <div class="study-number">01 — PROJECT OVERVIEW</div>
+          <h2>Three complementary studies in preliminary aircraft design</h2>
+          <p>This case study brings together three team assignments completed for the Aircraft Design course at Universidad Alfonso X el Sabio. They address different design problems and, importantly, two different aircraft concepts: the first study develops a new single-aisle aircraft sized around a 170-passenger, 4,000 km mission; the second estimates the cruise drag polar for a reference transport-aircraft geometry; and the third redesigns the propulsion system and wing of an Airbus A350. They should therefore be understood as a sequence of design methods and coursework milestones, not as one continuous specification for the same aircraft.</p>
+          <p>Together, the reports cover requirements interpretation, benchmarking against existing aircraft, cabin and fuselage packaging, aerodynamic drag estimation, constraint analysis, propulsion selection and wing planform definition. The figures below are extracted from the original reports and CAD deliverables.</p>
+          <div class="design-summary-grid">
+            <article><span>01 / GEOMETRY</span><strong>Fuselage sizing</strong><p>170 passengers · 4,000 km mission</p></article>
+            <article><span>02 / AERODYNAMICS</span><strong>Cruise drag polar</strong><p>36,000 ft · 985 km/h · Mach 0.93</p></article>
+            <article><span>03 / PERFORMANCE</span><strong>Wing & powerplant</strong><p>Airbus A350 · multi-condition constraints</p></article>
+          </div>
+        </section>
+
+        <section class="study-section" id="fuselage-study">
+          <div class="study-number">02 — STUDY 01</div>
+          <h2>Fuselage dimensioning and cabin arrangement</h2>
+          <p><strong>Design brief.</strong> The first assignment established the preliminary dimensions of a single-aisle transport aircraft intended to carry approximately 170 passengers over a design range of 4,000 km. Rather than starting with arbitrary dimensions, the team benchmarked four comparable aircraft: the Boeing 737-900, Airbus A321, COMAC C919 and McDonnell Douglas MD-83. Their published airport-planning and cabin data provided reference values for fuselage length and width, seat dimensions, aisle width, seat pitch and cargo volume.</p>
+          <p><strong>Cabin architecture.</strong> The selected layout contains 16 Business Class seats and 156 Economy Class seats. Business uses a 2–2 arrangement, while Economy uses a 3–3 arrangement with one aisle. The report uses average seat widths, armrest widths, aisle widths and seat pitches from the reference aircraft to estimate the cabin cross-section and cabin length. The resulting seat pitches are 0.94 m in Business and 0.80 m in Economy; corresponding seat widths are 0.55 m and 0.47 m.</p>
+          <p><strong>Fuselage dimensions.</strong> The calculated cabin width is 3.66 m and the external fuselage width is approximately 3.76 m. The cabin length is 30.4 m, with an estimated total fuselage length of 42.517 m. The resulting fineness ratio, defined as fuselage length divided by fuselage width, is 10.564. The report also estimates a passenger comfort volume of 1.628 m³ per passenger and a cargo-hold volume of 35.387 m³, using a Nordisk AKH (LD3-45) unit load device as a packaging reference.</p>
+          <p><strong>Safety and packaging considerations.</strong> The preliminary layout considers emergency-exit distribution and spacing with reference to CS-25 requirements. The report discusses the need to account for flight-deck volume, passenger-service areas, lavatories, galleys, overhead and underfloor packaging, structural lining thickness and cargo accommodation. These are conceptual sizing results; a full compliance demonstration would require a more detailed cabin safety and evacuation assessment.</p>
+          <p><strong>CAD development.</strong> The team modelled the aircraft and cabin arrangements in Autodesk Fusion 360. The extracted views show cabin cross-sections, seating arrangements, cargo packaging and the overall aircraft geometry. They provide visual evidence of how the analytical dimensions were translated into a preliminary three-dimensional configuration.</p>
+          <div class="design-gallery">
+            <div class="design-gallery-heading"><h3>Reference aircraft and benchmarking</h3><p>Comparable narrow-body aircraft were used to establish realistic proportions and cabin parameters before defining the new configuration.</p></div>
+            <div class="design-gallery-grid design-gallery-grid--four">
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/reference-boeing-737-900.webp" alt="Boeing 737-900 reference aircraft" loading="lazy"><figcaption><strong>Boeing 737-900.</strong> Reference for a high-capacity single-aisle layout.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/reference-airbus-a321.webp" alt="Airbus A321 reference aircraft" loading="lazy"><figcaption><strong>Airbus A321.</strong> Reference for fuselage length and cabin capacity.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/reference-comac-c919.webp" alt="COMAC C919 reference aircraft" loading="lazy"><figcaption><strong>COMAC C919.</strong> Additional narrow-body cabin and cargo reference.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/reference-md-83.webp" alt="McDonnell Douglas MD-83 reference aircraft" loading="lazy"><figcaption><strong>McDonnell Douglas MD-83.</strong> Historical comparator for dimensions and passenger arrangement.</figcaption></figure>
+            </div>
+            <div class="design-gallery-heading"><h3>Cabin layout and CAD definition</h3><p>The drawings move from local cabin details to the overall fuselage geometry and packaging concept.</p></div>
+            <div class="design-gallery-grid">
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/cabin-cross-section.webp" alt="CAD cross-section of the proposed aircraft cabin and fuselage" loading="lazy"><figcaption><strong>Cabin cross-section.</strong> Cross-sectional packaging used to relate the cabin width to the outer fuselage envelope.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/business-cabin-layout.webp" alt="Business class seating layout CAD drawing" loading="lazy"><figcaption><strong>Business Class.</strong> 2–2 seating arrangement and seat/aisle dimensions.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/economy-cabin-layout.webp" alt="Economy class seating layout CAD drawing" loading="lazy"><figcaption><strong>Economy Class.</strong> 3–3 seating arrangement used for the higher-density cabin section.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/aircraft-dimensioned-views.webp" alt="Dimensioned side and plan views of the preliminary aircraft CAD model" loading="lazy"><figcaption><strong>Aircraft arrangement.</strong> Side and plan views connecting the cabin sizing with the external aircraft geometry.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/cargo-uld-concept.webp" alt="Cargo unit load device packaging concept" loading="lazy"><figcaption><strong>Cargo packaging.</strong> Preliminary cargo-volume and ULD packaging study.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/aircraft-cad-overview.webp" alt="Overall CAD aircraft configuration from the fuselage sizing project" loading="lazy"><figcaption><strong>Overall CAD concept.</strong> Three-dimensional representation of the aircraft configuration developed from the sizing study.</figcaption></figure>
+            </div>
+          </div>
+          <div class="design-metrics"><div><span>Passengers</span><strong>172</strong></div><div><span>Cabin length</span><strong>30.40 m</strong></div><div><span>Fuselage length</span><strong>42.52 m</strong></div><div><span>Fuselage width</span><strong>3.76 m</strong></div><div><span>Fineness ratio</span><strong>10.564</strong></div><div><span>Cargo volume</span><strong>35.39 m³</strong></div></div>
+        </section>
+
+        <section class="study-section" id="cruise-study">
+          <div class="study-number">03 — STUDY 02</div>
+          <h2>Estimation of the aircraft cruise drag polar</h2>
+          <p><strong>Objective and flight condition.</strong> The second assignment estimates the drag polar and maximum aerodynamic efficiency for a transport-aircraft configuration in cruise. The specified condition is 36,000 ft (10,972.93 m) and 985 km/h (273.61 m/s), using a NACA 63-209 wing section. The reference geometry includes a 36.28 m span, 4.13 m mean geometric chord, 4.76 m mean aerodynamic chord, 26° leading-edge sweep and 0.33 taper ratio. The fuselage reference is 43.58 m long and 4.02 m wide.</p>
+          <p><strong>Atmosphere and similarity parameters.</strong> The report converts the input data to SI units and applies the International Standard Atmosphere to obtain 216.83 K, 12,436.41 Pa and a density of 0.19985 kg/m³. These values give a cruise Mach number of approximately 0.93. Reynolds number is evaluated for both the flight condition and a cut-off/roughness criterion; the lower, more conservative value is retained for the aerodynamic calculations.</p>
+          <p><strong>Parasite drag.</strong> The wing and fuselage are first treated separately. The wing estimate uses a flat-plate analogy and includes skin-friction, form-factor and wave-drag contributions. The NACA 63-209 section is used to estimate maximum thickness ratio, while airfoil data are used to derive the profile drag relationship. The fuselage estimate follows a similar approach, with its wetted area, fineness ratio, base area and base drag treated explicitly. The report then combines the component contributions to obtain the zero-lift parasite-drag term.</p>
+          <p><strong>Induced drag and balanced polar.</strong> The induced-drag model accounts for finite-wing tip vortices, viscous/separation effects and the influence of the horizontal tailplane. The resulting parabolic polar is reported as <code>C<sub>D</sub> = 0.017789 + 0.052013 C<sub>L</sub>²</code>. The constant term represents the estimated zero-lift drag contribution; the coefficient multiplying <code>C<sub>L</sub>²</code> represents the lift-dependent induced-drag contribution in the adopted model. From these coefficients, the report calculates a maximum lift-to-drag ratio of approximately 16.44.</p>
+          <p>This polar is a compact engineering model: for a specified lift coefficient, it estimates the corresponding drag coefficient under the assumptions and reference condition of the report. It is useful for preliminary performance calculations, but should not be interpreted as a measured flight-test polar.</p>
+          <div class="design-gallery">
+            <div class="design-gallery-heading"><h3>Airfoil and drag-polar development</h3><p>Original plots from the report show the selected airfoil, the profile-drag data and the linear fit used to identify the drag-polar coefficients.</p></div>
+            <div class="design-gallery-grid">
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/cruise-airfoil-naca-63-209.webp" alt="NACA 63-209 airfoil profile extracted from the cruise polar report" loading="lazy"><figcaption><strong>NACA 63-209 section.</strong> Profile used as the aerodynamic reference for the wing calculations.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/cruise-drag-polar-overview.webp" alt="Drag coefficient plotted against lift coefficient and lift coefficient squared" loading="lazy"><figcaption><strong>Drag data.</strong> Drag coefficient represented against lift coefficient and its square.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/cruise-drag-polar-linear-fit.webp" alt="Linear regression of drag coefficient against lift coefficient squared" loading="lazy"><figcaption><strong>Linear fit.</strong> The approximately linear region is used to identify the profile-drag intercept and lift-dependent slope.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/cruise-compressibility-factor-rls.webp" alt="Roskam compressibility correction chart" loading="lazy"><figcaption><strong>Compressibility correction.</strong> Chart used to estimate the correction factor for the high-subsonic cruise condition.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/cruise-fuselage-interference-factor.webp" alt="Fuselage and wing-body interference correction chart" loading="lazy"><figcaption><strong>Wing–body interaction.</strong> Reference chart used in the combined parasite-drag estimate.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/cruise-tailplane-induced-drag-factor.webp" alt="Horizontal tailplane induced-drag correction chart" loading="lazy"><figcaption><strong>Tailplane contribution.</strong> Correction used when estimating the induced-drag contribution of the complete configuration.</figcaption></figure>
+            </div>
+          </div>
+          <div class="design-metrics"><div><span>Cruise altitude</span><strong>36,000 ft</strong></div><div><span>Cruise speed</span><strong>985 km/h</strong></div><div><span>Mach</span><strong>0.93</strong></div><div><span>Zero-lift drag</span><strong>0.017789</strong></div><div><span>Induced factor</span><strong>0.052013</strong></div><div><span>Maximum L/D</span><strong>16.44</strong></div></div>
+        </section>
+
+        <section class="study-section" id="wing-study">
+          <div class="study-number">04 — STUDY 03</div>
+          <h2>Powerplant selection and Airbus A350 wing redesign</h2>
+          <p><strong>Design objective.</strong> The third assignment considers an Airbus A350 at 35,000 ft and 985 km/h (Mach 0.923). The task is to select an alternative propulsion system and resize the wing so that the aircraft satisfies the analysed operating requirements. The study constructs a constraint diagram with thrust-to-weight ratio on one axis and wing loading on the other. Each flight phase imposes a different boundary on the feasible design region.</p>
+          <p><strong>Performance constraints.</strong> The take-off analysis relates required thrust-to-weight ratio to wing loading, take-off field length and maximum lift coefficient. The landing analysis imposes a wing-loading limit based on landing field length and landing maximum lift coefficient. The second-segment climb case checks the climb gradient with the critical engine inoperative, a particularly important multi-engine transport-aircraft requirement. The cruise analysis estimates the thrust required to sustain the specified cruise condition. Overlaying these constraints identifies combinations that satisfy all the studied conditions.</p>
+          <p><strong>Design point and engine.</strong> The report compares candidate engines and selects the General Electric GE90-115B, reporting 513,947 N thrust per engine and an engine mass of 8,761 kg. The selected thrust-to-weight ratio is 0.3742 and the selected wing loading is 8,000 Pa. The report then obtains a wing reference area of 343.35 m², an aspect ratio of 8.426 and a span of 53.788 m. These are the values reported by the coursework; they are not independent certification or performance-validation results.</p>
+          <p><strong>Wing geometry.</strong> The wing is developed as a double-taper planform with a 33° quarter-chord sweep and winglets. The selected section is NACA 2408, with a relative thickness of approximately 8.5%, estimated using the Torenbeek method after comparing with the Roskam chart. An equivalent trapezoidal taper ratio of 0.24 is used as an intermediate geometric representation. The final report gives root, kink and tip chords of 12.15 m, 8.878 m and 2.47 m respectively, with the kink located 4.040 m from the centreline. The mean aerodynamic chord is reported as 7.36 m.</p>
+          <p><strong>High-lift and critical-case parameters.</strong> The final values include a maximum lift coefficient of 1.804 for take-off, 2.654 for landing, and a second-segment climb parameter of 0.144. The figures document the calculation path from individual performance curves to the combined design-point selection and then to the wing geometry.</p>
+          <div class="design-gallery">
+            <div class="design-gallery-heading"><h3>Performance and constraint analysis</h3><p>Each plot corresponds to a different operating requirement. The combined diagrams show how the team selected a feasible design point rather than sizing the aircraft around cruise alone.</p></div>
+            <div class="design-gallery-grid">
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/wing-takeoff-performance.webp" alt="Take-off performance calculations from the A350 redesign report" loading="lazy"><figcaption><strong>Take-off performance.</strong> Intermediate calculations used to derive the take-off constraint.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/wing-takeoff-constraint.webp" alt="Take-off thrust-to-weight versus wing-loading constraint" loading="lazy"><figcaption><strong>Take-off constraint.</strong> Required thrust-to-weight ratio as a function of wing loading.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/wing-landing-performance.webp" alt="Landing performance calculations" loading="lazy"><figcaption><strong>Landing performance.</strong> Calculation of the landing-related wing-loading limit.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/wing-landing-constraint.webp" alt="Landing wing-loading constraint curve" loading="lazy"><figcaption><strong>Landing constraint.</strong> Boundary imposed by landing distance and maximum lift coefficient.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/wing-second-segment-performance.webp" alt="Second segment climb calculations with critical engine inoperative" loading="lazy"><figcaption><strong>Second-segment climb.</strong> Calculation for the critical-engine-inoperative climb case.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/wing-second-segment-constraint.webp" alt="Second segment climb thrust-to-weight constraint" loading="lazy"><figcaption><strong>Climb constraint.</strong> Additional lower bound on installed thrust.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/wing-cruise-performance.webp" alt="Cruise performance calculations" loading="lazy"><figcaption><strong>Cruise performance.</strong> Calculation of the thrust requirement at the design cruise condition.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/wing-cruise-constraint.webp" alt="Cruise thrust-to-weight versus wing-loading constraint" loading="lazy"><figcaption><strong>Cruise constraint.</strong> Required thrust-to-weight ratio across wing-loading choices.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/wing-combined-constraints.webp" alt="Combined aircraft performance constraints" loading="lazy"><figcaption><strong>Combined constraints.</strong> Overlay of the operating requirements used to identify a feasible region.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/wing-simplified-design-constraints.webp" alt="Simplified thrust-to-weight and wing-loading diagram" loading="lazy"><figcaption><strong>Simplified design diagram.</strong> Reduced set of curves used to select the design point.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/wing-selected-design-point.webp" alt="Selected A350 redesign design point" loading="lazy"><figcaption><strong>Selected design point.</strong> Chosen thrust-to-weight ratio and wing loading within the feasible region.</figcaption></figure>
+            </div>
+            <div class="design-gallery-heading"><h3>Airfoil, planform and wingtip design</h3><p>The selected aerodynamic section and planform translate the sizing parameters into a preliminary wing geometry.</p></div>
+            <div class="design-gallery-grid">
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/wing-roskam-thickness-chart.webp" alt="Roskam chart for estimating wing airfoil thickness" loading="lazy"><figcaption><strong>Thickness estimation.</strong> Roskam chart used as an initial estimate before applying the Torenbeek relation.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/wing-naca-2408-profile.webp" alt="NACA 2408 profile selected for the redesigned wing" loading="lazy"><figcaption><strong>NACA 2408.</strong> Selected wing section with approximately 8.5% relative thickness.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/wing-taper-ratio-chart.webp" alt="Torenbeek chart for equivalent wing taper ratio" loading="lazy"><figcaption><strong>Equivalent taper ratio.</strong> Torenbeek chart used to estimate a trapezoidal equivalent taper ratio of 0.24.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/wing-winglet-comparison.webp" alt="Comparison of Airbus A350 winglet configurations" loading="lazy"><figcaption><strong>Winglet comparison.</strong> Reference images discussed in the report when motivating the wingtip configuration.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/wing-winglet-detail.webp" alt="Close-up reference of an A350 winglet" loading="lazy"><figcaption><strong>Wingtip detail.</strong> Reference for the curved winglet concept.</figcaption></figure>
+              <figure class="case-figure"><img src="../assets/case-studies/aircraft-design/wing-wing-planform.webp" alt="Final conceptual double-taper wing planform drawing" loading="lazy"><figcaption><strong>Designed wing planform.</strong> Final schematic showing the double-taper geometry and key dimensions.</figcaption></figure>
+            </div>
+          </div>
+          <div class="design-metrics"><div><span>Selected engine</span><strong>GE90-115B</strong></div><div><span>Thrust per engine</span><strong>513.9 kN</strong></div><div><span>Wing loading</span><strong>8,000 Pa</strong></div><div><span>Wing area</span><strong>343.35 m²</strong></div><div><span>Span</span><strong>53.788 m</strong></div><div><span>Aspect ratio</span><strong>8.426</strong></div><div><span>Quarter-chord sweep</span><strong>33°</strong></div><div><span>Airfoil</span><strong>NACA 2408</strong></div></div>
+          <div class="case-note">The third report contains a few values and units that should be checked against the original calculation sheets before external publication (including some candidate-engine TSFC entries and intermediate wing-geometry assumptions). The figures and reported final values are reproduced as coursework evidence, not independently validated aircraft data.</div>
+        </section>
+
+        <section class="study-section" id="contribution">
+          <div class="study-number">05 — TEAM & CONTRIBUTION</div>
+          <h2>Collaborative engineering work</h2>
+          <p>The three reports were completed by a four-person team: Carolina Fernández Fernández, Lucía García Varela, Javier Bolaños Llano and Javier Lendínez Castillo. The reports document shared calculations and deliverables rather than assigning every task to an individual. I therefore present the technical results as team outcomes and describe my involvement as a contribution to the collective aircraft-design work, rather than claiming sole authorship of particular calculations.</p>
+        </section>
+
+        <section class="study-section" id="reflection">
+          <div class="study-number">06 — ENGINEERING TAKEAWAY</div>
+          <h2>From requirements to a defensible preliminary configuration</h2>
+          <p>These assignments show three complementary parts of aircraft design. The fuselage study translates a passenger mission into a practical cabin and external geometry. The cruise-polar study turns geometry and flow conditions into an aerodynamic model. The A350 redesign uses operating constraints to balance wing loading, installed thrust and planform geometry. The common engineering thread is traceability: every selected dimension or performance parameter should be connected to a requirement, a calculation method and a clearly stated assumption.</p>
+          <a class="case-next" href="flight-dynamics.html">Next case study: Flight Dynamics →</a>
+        </section>
+      </div>
+      <aside class="study-aside" aria-label="Case study navigation">
+        <h2>ON THIS PAGE</h2>
+        <nav class="study-toc"><a href="#challenge">Overview</a><a href="#fuselage-study">01 Fuselage</a><a href="#cruise-study">02 Cruise polar</a><a href="#wing-study">03 Wing & power</a><a href="#contribution">Team</a><a href="#reflection">Takeaway</a></nav>
+        <a class="study-source" href="../index.html#projects">Explore all projects ↓</a>
+      </aside>
+    </div>
+  </main>
+  <footer class="case-footer wrap"><a href="../index.html#projects">← All Projects</a><span>Javier Lendínez · Aerospace Engineering</span></footer>
+  <script src="project-pages.js" defer></script>
+</body>
+</html>

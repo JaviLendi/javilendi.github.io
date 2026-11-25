@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0f16">
+  <meta name="description" content="I led design and integration work for UAXSat IV, a student CubeSat with composite structures, sensor payload, and LoRa ground-station data flow.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="UAXSat IV — CubeSat Systems | Javier Lendínez">
+  <meta property="og:description" content="I connected CubeSat structural design, manufacturing, payload integration, and ground-system work.">
+  <meta property="og:url" content="https://javilendi.github.io/projects/uaxsat.html">
+  <meta property="og:image" content="https://javilendi.github.io/assets/og-portfolio.jpg">
+  <meta property="og:image:alt" content="Engineering portfolio preview with a real VLMPy wing discretisation screenshot">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://javilendi.github.io/projects/uaxsat.html">
+  <title>UAXSat IV — CubeSat Systems | Javier Lendínez</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../case-studies.css">
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="topbar">
+    <a class="logo" href="../index.html" aria-label="Javier Lendínez portfolio">JL<span>.</span></a>
+    <nav id="primary-nav" aria-label="Main navigation">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#github-projects">GitHub</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="download" href="../assets/javier-lendinez-cv.pdf" download>Download CV ↓</a>
+    <button class="menu" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+  </header>
+  <main id="main-content" class="wrap">
+    <section class="case-hero">
+      <div class="case-breadcrumb"><a href="../index.html">Portfolio</a> / <a href="../index.html#projects">Projects</a> / UAXSat IV</div>
+      <div class="case-kicker">02 / SPACE SYSTEMS & STRUCTURES</div>
+      <h1>UAXSat IV — <em>CubeSat Systems</em></h1>
+      <p class="case-deck">I helped lead design and integration for a 3U student satellite, connecting its structure, composite materials, payload, telemetry, and ground data system.</p>
+      <div class="case-tags"><span>3U CubeSat</span><span>Kevlar–Carbon laminate</span><span>CATIA V5</span><span>LoRa</span><span>System integration</span></div>
+      <div class="case-meta">
+        <div><dt>Role</dt><dd>Team Leader & Design Engineer</dd></div>
+        <div><dt>Programme</dt><dd>UAX BlueJay III & IV · 2023–2024</dd></div>
+        <div><dt>Source</dt><dd><a class="case-back" href="https://github.com/UAXSat/UAXSat" target="_blank" rel="noreferrer">Public project repository ↗</a></dd></div>
+      </div>
+    </section>
+    <div class="case-layout">
+      <div class="case-content">
+        <section class="study-section" id="challenge">
+          <div class="study-number">01 — THE CHALLENGE</div>
+          <h2>Integrate a small satellite as a system</h2>
+          <p>I worked on UAXSat IV, a student-led 3U CubeSat programme for stratospheric research and Earth observation. My engineering challenge went beyond the structure: the mechanical packaging had to support a payload while software, sensors, power, and communications worked as an integrated system.</p>
+          <p>I led team work and contributed to structural design, composite materials, additive manufacturing, CNC processes, communications and system integration.</p>
+        </section>
+        <figure class="case-figure case-figure--gondola">
+        <img
+          src="../assets/case-studies/uaxsat/gondola.jpg"
+          alt="UAXSat IV gondola mounted on the stratospheric balloon structure"
+          width="1600"
+          height="824"
+          loading="lazy"
+        >
+        <figcaption>
+          UAXSat IV gondola mounted on the stratospheric balloon structure.
+        </figcaption>
+      </figure>
+        <section class="study-section" id="approach">
+          <div class="study-number">02 — ENGINEERING APPROACH</div>
+          <h2>Design around interfaces, mass, and manufacture</h2>
+          <p>We developed a 3U structure using Kevlar–carbon laminate walls, PETG printed components, and metal profiles. I worked on the structural and integration context, where mounting points, material properties, manufacturing capability, and component interfaces all affect the design.</p>
+          <p>Our documented payload includes GPS, LoRa, temperature, pressure, UV, and inertial measurements, with a camera listed in the hardware overview. The onboard computer is a Raspberry Pi 4.</p>
+          <p>We mounted as hardware and sensors a GPS as a SparkFun NEO-M9N, the LoRa radio as an Ebyte E220 900T30D, the temperature sensor as a DS18B20, the pressure sensor as a BMP390, the IMU as an ICM-20948, and the UV sensor as an AS7331. The camera mounted is a GoPro Hero 11.</p>
+        </section>
+        <section class="study-section" id="implementation">
+          <div class="study-number">03 — IMPLEMENTATION</div>
+          <h2>Structure, payload, and ground segment</h2>
+          <p>Our project repository publishes structural CAD assemblies and individual hardware models. I summarise the documented communications path below; it is an explanatory diagram, not a flight dashboard or a claim that every link was flight-qualified.</p>
+          <div class="system-flow" role="img" aria-label="Documented UAXSat data path from sensor payload to ground station and Grafana visualization">
+            <div class="flow-step"><b>01 / PAYLOAD</b><span>GPS · IMU · temperature · pressure · UV · camera</span></div>
+            <div class="flow-step"><b>02 / ONBOARD</b><span>Sensor collection and satellite-side software</span></div>
+            <div class="flow-step"><b>03 / TELEMETRY</b><span>LoRa link to a Raspberry Pi ground station and Yagi antenna</span></div>
+            <div class="flow-step"><b>04 / DATA</b><span>PostgreSQL storage and Grafana visualisation</span></div>
+          </div>
+          <div class="flow-note">I reconstructed this system path from our public README and communications documentation.</div>
+          <figure class="case-figure">
+            <img src="../assets/case-studies/uaxsat/telemetry-dashboard.webp" alt="UAXSat IV Grafana dashboard with sensor plots and a GPS map panel" width="1600" height="824" loading="lazy">
+            <figcaption>I include this dashboard screenshot to show the ground-data interface.</figcaption>
+          </figure>
+          <p>We had Raspberry Pi 3B ground station connected to the Ebyte radio and a Yagi antenna for reception. On the ground, the project configuration stores telemetry in PostgreSQL and visualises it with Grafana. This communication system allowed us to collect and monitor sensor data from the satellite.</p>
+          <p>Structural CAD and project software are available in the <a href="https://github.com/UAXSat/UAXSat/tree/main/Hardware" target="_blank" rel="noreferrer">hardware repository</a> and <a href="https://github.com/UAXSat/UAXSat/tree/main/Software" target="_blank" rel="noreferrer">software repository</a>.</p>
+        </section>
+        <section class="study-section" id="validation">
+          <div class="study-number">04 — VALIDATION & RESULTS</div>
+          <h2>Documented system and limitations</h2>
+          <p>The system documentation covers the sensor suite, communications stack, ground-station database, and Grafana dashboard configuration. It does not include quantitative flight-test results or a verified mission-performance report.</p>
+          <div class="case-note">A stronger next evidence package would pair the structural assembly and interface drawings with mass properties, environmental test records, telemetry logs, and a traceable integration test matrix.</div>
+        </section>
+        <section class="study-section" id="reflection">
+          <div class="study-number">05 — WHAT I LEARNED</div>
+          <h2>Integration is a design constraint</h2>
+          <p>Working across structural and subsystem boundaries taught me to consider mounting points, access, wiring, sensor placement, and manufacturing sequence early, rather than leaving them to final assembly.</p>
+          <p>In another iteration, I would document interface ownership and verification criteria alongside the CAD so I could review each subsystem before hardware integration.</p>
+          <a class="case-next" href="uas-drone-mission-planner.html">Next case study: UAS Drone Mission Planner →</a>
+        </section>
+      </div>
+      <aside class="study-aside" aria-label="Case study navigation">
+        <h2>ON THIS PAGE</h2>
+        <nav class="study-toc"><a href="#challenge">01 Challenge</a><a href="#approach">02 Approach</a><a href="#implementation">03 Implementation</a><a href="#validation">04 Validation</a><a href="#reflection">05 Reflection</a></nav>
+        <a class="study-source" href="https://github.com/UAXSat/UAXSat" target="_blank" rel="noreferrer">Explore project files ↗</a>
+      </aside>
+    </div>
+  </main>
+  <footer class="case-footer wrap"><a href="../index.html#projects">← All Projects</a><span>Javier Lendínez · Aerospace Engineering</span></footer>
+  <script src="project-pages.js" defer></script>
+</body>
+</html>

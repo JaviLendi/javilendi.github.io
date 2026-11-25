@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0a0f16" />
+    <meta
+      name="description"
+      content="Aerospace engineering Projects in aerodynamics, CubeSat systems, manufacturing, and process improvement."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Javier Lendínez — Aerospace Engineering Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Engineering design, manufacturing, process improvement, and software tools."
+    />
+    <meta property="og:url" content="https://javilendi.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Javier Lendínez — Aerospace Engineering Portfolio</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="case-studies.css" />
+    <link rel="stylesheet" href="assets/hero-loading.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to content</a>
+
+    <section class="landing-intro" aria-label="Javier Lendínez — Engineering Portfolio">
+      <div class="landing-intro__grid" aria-hidden="true"></div>
+      <div class="logo-container logo-container--hero landing-intro__mark" aria-hidden="true">
+        <div class="diamond d3"></div>
+        <div class="diamond d2"></div>
+        <div class="diamond d1"></div>
+        <div class="text-wrapper">
+          <span class="letters">JL</span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      <div class="landing-intro__content">
+        <span class="landing-intro__eyebrow">AEROSPACE ENGINEER</span>
+        <h1 class="landing-intro__name">JAVIER<br /><span>LENDÍNEZ</span></h1>
+        <div class="landing-intro__rule" aria-hidden="true"><i></i></div>
+        <p class="landing-intro__caption">ENGINEERING PORTFOLIO <span>·</span> MADRID, SPAIN</p>
+      </div>
+      <a class="landing-intro__scroll" href="#top" aria-label="Scroll to explore the portfolio">
+        <span>SCROLL TO EXPLORE</span><i aria-hidden="true"></i>
+      </a>
+      <span class="landing-intro__index" aria-hidden="true">01</span>
+    </section>
+
+    <header class="topbar">
+      <a class="logo" href="#top" aria-label="Javier Lendínez portfolio">
+        <div class="logo-container logo-container--small" aria-hidden="true">
+          <div class="diamond d3"></div>
+          <div class="diamond d2"></div>
+          <div class="diamond d1"></div>
+          <div class="text-wrapper"><span class="letters">JL</span><span class="dot"></span></div>
+        </div>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#projects">Projects</a
+        ><a href="#engineering-highlights">Highlights</a
+        ><a href="#github-projects">GitHub</a
+        ><a href="#experience">Experience</a><a href="#about">About</a
+        ><a href="#contact">Contact</a>
+      </nav>
+      <a class="download" href="assets/javier-lendinez-cv.pdf" download
+        >Download CV ↓</a
+      ><button
+        class="menu"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+    </header>
+    <main id="top" tabindex="-1">
+      <section class="hero wrap">
+        <div>
+          <div class="eyebrow">
+            <i></i> AEROSPACE ENGINEER <b></b> MADRID, SPAIN
+          </div>
+          <h1>Building the<br /><em>next iteration</em><br />of flight.</h1>
+          <p class="intro">
+            I’m Javier Lendínez, an Aerospace Engineer working at the intersection of
+            <strong
+              >manufacturing, process industrialisation and engineering
+              software.</strong
+            >
+            From the Eurofighter production line to aerodynamic solvers and
+            CubeSat structures, I turn technical challenges into practical
+            solutions.
+          </p>
+          <div class="actions">
+            <a class="btn" href="#projects">Explore my work ↓</a
+            ><a class="textlink" href="#contact">Contact me ↗</a>
+          </div>
+          <div class="metrics">
+            <div>
+              <b>01</b><span>Manufacturing<br />& process engineering</span>
+            </div>
+            <div>
+              <b>02</b><span>Aerodynamics<br />& numerical methods</span>
+            </div>
+            <div>
+              <b>03</b><span>Space systems<br />& structures</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="art-meta">
+            <span>FIG. 001 / EUROFIGHTER FLOW SIMULATION</span
+            ><span>40° 25′ N · 3° 42′ W</span>
+          </div>
+          <div class="hero-loading" role="status" aria-live="polite">
+            <span class="hero-loading__indicator" aria-hidden="true"></span>
+            <span data-loading-message>LOADING AIRCRAFT MODEL</span>
+          </div>
+          <svg
+            viewBox="0 0 600 500"
+            role="img"
+            aria-label="Conceptual top-view airflow visualization around a passenger aircraft. Streamlines bend around the fuselage and wings; this is illustrative, not CFD output."
+          >
+            <defs>
+              <pattern
+                id="grid"
+                width="24"
+                height="24"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M24 0H0V24"
+                  fill="none"
+                  stroke="#9eb9c6"
+                  stroke-opacity=".13"
+                />
+              </pattern>
+              <linearGradient id="aircraft" x2="0" y2="1">
+                <stop stop-color="#b9e7e8" stop-opacity=".23" />
+                <stop offset="1" stop-color="#67b7c0" stop-opacity=".06" />
+              </linearGradient>
+              <marker
+                id="flow-arrow"
+                markerWidth="7"
+                markerHeight="7"
+                refX="5"
+                refY="3.5"
+                orient="auto"
+              >
+                <path d="M0 0L7 3.5L0 7Z" fill="#f0a86b" />
+              </marker>
+              <style>
+                @keyframes flow {
+                  to {
+                    stroke-dashoffset: -30px;
+                  }
+                }
+                .streamline {
+                  animation: flow 2.4s linear infinite;
+                }
+                .streamline.slow {
+                  animation-duration: 3.4s;
+                }
+                .streamline.delay {
+                  animation-delay: -1.2s;
+                }
+                @media (prefers-reduced-motion: reduce) {
+                  .streamline {
+                    animation: none;
+                  }
+                }
+              </style>
+            </defs>
+            <rect width="600" height="500" fill="url(#grid)" />
+            <g
+              fill="none"
+              stroke="#7fb8c5"
+              stroke-opacity=".6"
+              stroke-width="1.2"
+            >
+              <path
+                class="streamline"
+                d="M0 88C145 88 164 78 205 86C260 97 282 111 338 109C406 107 423 86 600 88"
+              />
+              <path
+                class="streamline delay"
+                d="M0 127C130 127 160 110 203 116C254 123 278 143 337 141C411 139 434 116 600 127"
+              />
+              <path
+                class="streamline slow"
+                d="M0 173C124 173 156 148 197 151C246 155 267 171 324 169C393 167 426 148 600 173"
+              />
+              <path
+                class="streamline delay"
+                d="M0 211C105 211 150 194 193 190C236 186 260 195 309 194C384 193 427 191 600 211"
+              />
+              <path
+                class="streamline"
+                d="M0 289C105 289 150 306 193 310C236 314 260 305 309 306C384 307 427 309 600 289"
+              />
+              <path
+                class="streamline slow"
+                d="M0 327C124 327 156 352 197 349C246 345 267 329 324 331C393 333 426 352 600 327"
+              />
+              <path
+                class="streamline delay"
+                d="M0 373C130 373 160 390 203 384C254 377 278 357 337 359C411 361 434 384 600 373"
+              />
+              <path
+                class="streamline"
+                d="M0 412C145 412 164 422 205 414C260 403 282 389 338 391C406 393 423 414 600 412"
+              />
+            </g>
+            <g
+              fill="none"
+              stroke="#f0a86b"
+              stroke-width="1.4"
+              marker-end="url(#flow-arrow)"
+            >
+              <path d="M26 56H102" />
+              <path d="M498 444H574" />
+            </g>
+            <g
+              fill="url(#aircraft)"
+              stroke="#a6dce1"
+              stroke-width="1.7"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M78 246L122 239L188 239L220 233L421 241L472 246L514 250L472 254L421 259L220 267L188 261L122 261Z"
+              />
+              <path d="M222 240L177 122L223 136L326 240Z" />
+              <path d="M222 260L177 378L223 364L326 260Z" />
+              <path d="M142 241L108 212L151 224L178 244Z" />
+              <path d="M142 259L108 288L151 276L178 256Z" />
+            </g>
+            <g
+              fill="none"
+              stroke="#f0a86b"
+              stroke-opacity=".85"
+              stroke-width="1"
+            >
+              <path
+                d="M235 140L310 239M235 360L310 261M112 216L145 241M112 284L145 259"
+                stroke-dasharray="3 4"
+              />
+            </g>
+            <g fill="#c6d7df" font-family="monospace" font-size="9">
+              <text x="22" y="36">RELATIVE AIRFLOW →</text>
+              <text x="420" y="465">CONCEPTUAL · NOT CFD</text>
+            </g>
+          </svg>
+          <div class="art-meta bottom">
+            <span>ENGINEERING PORTFOLIO</span><span>JL / 26</span>
+          </div>
+        </div>
+        <div class="scroll">— SCROLL TO EXPLORE</div>
+      </section>
+      <div class="ticker">
+        <div>
+          MANUFACTURING ENGINEERING　✳　 AERODYNAMICS　✳　 SPACE SYSTEMS　✳　
+          PROCESS AUTOMATION　✳　 MANUFACTURING ENGINEERING　✳　
+          AERODYNAMICS　✳　 SPACE SYSTEMS　✳
+        </div>
+      </div>
+
+      <section id="projects" class="section wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">01 / MY WORK</div>
+            <h2>Engineering work,<br /><em>under the surface.</em></h2>
+          </div>
+          <p>
+            Projects in aerodynamic software, satellite systems, and
+            manufacturing, with aircraft design, flight dynamics, propulsion,
+            rotorcraft, mission planning, and structural analysis.
+          </p>
+        </div>
+        <div class="filters">
+          <button class="active" data-filter="all" aria-pressed="true">
+            All work <small>12</small></button
+          ><button data-filter="software" aria-pressed="false">
+            Software & analysis</button
+          ><button data-filter="space" aria-pressed="false">
+            Space systems</button
+          ><button data-filter="aircraft" aria-pressed="false">
+            Aircraft & flight</button
+          ><button data-filter="mission" aria-pressed="false">
+            Mission planning</button
+          ><button data-filter="structures" aria-pressed="false">
+            Structures & materials</button
+          ><button data-filter="manufacturing" aria-pressed="false">
+            Manufacturing & process
+          </button>
+        </div>
+        <div class="projects">
+
+          <article class="project additional-project" data-category="software">
+            <div class="project-art mission">
+              <label>01 / AERODYNAMICS</label>
+              <img src="assets/case-studies/vlmpy/vlmpy-logo.png" alt="VLMPy aerodynamic analysis application" width="1919" height="1089" loading="lazy"/>
+            </div>
+            <div class="project-body">
+              <div class="kicker">THESIS PROJECT <span>2025</span></div>
+              <h3>VLMPy — Aerodynamic Analysis Tool</h3>
+              <p>
+                I developed this Python Vortex Lattice Method application to
+                analyse lifting surfaces, inspect their discretisation, and
+                visualise aerodynamic results.
+              </p>
+              <div class="tags">
+                <span>Python</span><span>VLM</span><span>Flask</span
+                ><span>Plotly</span>
+              </div>
+              <div class="project-foot">
+                Highest honours
+                <a
+                  href="projects/vlmpy.html"
+                  aria-label="View VLMPy project"
+                  >↗</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article class="project additional-project"
+            data-category="space">
+            <div class="project-art mission">
+              <label>02 / SPACE SYSTEMS</label>
+              <img src="assets/case-studies/uaxsat/cover.webp" alt="UAXSat IV logo" width="1000" height="1000" loading="lazy"/>
+            </div>
+            <div class="project-body">
+              <div class="kicker">
+                STUDENT SPACE PROGRAMME <span>2023—24</span>
+              </div>
+              <h3>UAXSat IV — CubeSat Systems</h3>
+              <p>
+                I led technical work and contributed to structural design,
+                composite materials, additive manufacturing, CNC processes,
+                payload interfaces, and system integration.
+              </p>
+              <div class="tags">
+                <span>CATIA V5</span><span>Composites</span
+                ><span>3D Printing</span><span>Integration</span>
+              </div>
+              <div class="project-foot">
+                UAXSat IV — CubeSat Systems
+                <a
+                  href="projects/uaxsat.html"
+                  aria-label="View UAXSat IV project"
+                  >↗</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article class="project additional-project" data-category="mission">
+            <div class="project-art mission">
+              <label>03 / MISSION SYSTEMS</label>
+              <img src="assets/case-studies/rpas-mission/cover.png" alt="UAXSat IV logo" width="1000" height="1000" loading="lazy"/>
+            </div>
+            <div class="project-body">
+              <div class="kicker">INDIVIDUAL SOFTWARE PROJECT <span>2026</span></div>
+              <h3>UAS Drone Mission Planner</h3>
+              <p>
+                I built a Python tool for an academic maritime-surveillance
+                scenario, combining route profiles, AIP/ENAIRE airspace rules,
+                and safety analysis.
+              </p>
+              <div class="tags">
+                <span>Python</span><span>UAS / RPAS / Drones</span><span>Streamlit</span><span>ENAIRE INSIGNIA</span><span>AIP data</span><span>Route planning</span><span>Safety analysis</span>
+              </div>
+              <div class="project-foot">
+                Individual academic project
+                <a href="projects/uas-drone-mission-planner.html" aria-label="View RPAS mission-planning case study">↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- <article class="project additional-project" data-category="aircraft">
+            <div class="project-art aircraft-design">
+              <label>04 / AIRCRAFT DESIGN</label>
+              <img src="assets/case-studies/aircraft-design/cover.jpg" alt="Aircraft design cover" width="1000" height="1000" loading="lazy"/>
+            </div>
+            <div class="project-body">
+              <div class="kicker">THREE-STAGE TEAM DESIGN <span>2024—25</span></div>
+              <h3>Preliminary Aircraft Design</h3>
+              <p>
+                With a team of four, I worked through fuselage sizing,
+                cruise-polar estimation, and wing and powerplant selection as
+                connected design stages.
+              </p>
+              <div class="tags">
+                <span>Aircraft sizing</span><span>Aerodynamics</span
+                ><span>Propulsion</span><span>Team of 4</span>
+              </div>
+              <div class="project-foot">
+                My contribution was fundamental · team of 4
+                <a href="projects/aircraft-design.html" aria-label="View preliminary aircraft design case study">↗</a>
+              </div>
+            </div>
+          </article> -->
+
+          <!-- <article class="project additional-project" data-category="aircraft">
+            <div class="project-art dynamics">
+              <label>05 / FLIGHT DYNAMICS</label>
+              <img src="assets/case-studies/flight-dynamics/cover.png" alt="Flight dynamics cover" width="1000" height="1000" loading="lazy"/>
+            </div>
+            <div class="project-body">
+              <div class="kicker">TEAM ANALYSIS <span>2026</span></div>
+              <h3>Aircraft Stability & Flight Dynamics</h3>
+              <p>
+                I contributed to our team's longitudinal and
+                lateral-directional models, mode interpretation, transfer
+                function, and frequency and step-response analyses.
+              </p>
+              <div class="tags">
+                <span>Python</span><span>State space</span
+                ><span>Routh–Hurwitz</span><span>Bode</span>
+              </div>
+              <div class="project-foot">
+                My contribution was fundamental · team of 4
+                <a href="projects/flight-dynamics.html" aria-label="View flight-dynamics case study">↗</a>
+              </div>
+            </div>
+          </article> -->
+
+          <!-- <article class="project additional-project" data-category="software">
+            <div class="project-art panels">
+              <label>06 / AERODYNAMICS</label>
+              <div class="art-readout">
+                <strong>NACA 0112</strong>
+                <span>198 PANELS / SOURCES + DOUBLET METHODS</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="kicker">ADVANCED AERODYNAMICS · TEAM <span>2026</span></div>
+              <h3>2D Panel-Method Solvers</h3>
+              <p>
+                I contributed to our Python source-panel and constant-doublet
+                implementations, comparing pressure distributions and
+                streamlines with XFOIL.
+              </p>
+              <div class="tags">
+                <span>Python</span><span>Potential flow</span
+                ><span>XFOIL</span><span>Team of 4</span>
+              </div>
+              <div class="project-foot">
+                My contribution was fundamental · results under review
+                <a href="projects/panel-method.html" aria-label="View panel-method case study">↗</a>
+              </div>
+            </div>
+          </article> -->
+
+          <!-- <article class="project additional-project" data-category="software">
+            <div class="project-art cfd">
+              <label>08 / CFD POST-PROCESSING</label>
+              <img
+                src="CFD/results/eurofighter-streamlines-t200.png"
+                alt="Exploratory OpenFOAM streamlines around the Eurofighter mesh"
+                width="1419"
+                height="1245"
+                loading="lazy"
+              />
+            </div>
+            <div class="project-body">
+              <div class="kicker">OPENFOAM VISUALISATION <span>200 ITERATIONS</span></div>
+              <h3>External-Flow Post-Processing</h3>
+              <p>
+                I reconstructed an indexed aircraft mesh and rendered sampled
+                OpenFOAM streamlines with velocity-based colouring. This is an
+                exploratory visualisation, not validated aerodynamic data.
+              </p>
+              <div class="tags">
+                <span>OpenFOAM</span><span>Python</span><span>VTP</span
+                ><span>3D post-processing</span>
+              </div>
+              <div class="project-foot">
+                CFD visualisation · exploratory
+                <a href="projects/cfd-post-processing.html" aria-label="View CFD post-processing case study">↗</a>
+              </div>
+            </div>
+          </article> -->
+
+          <!-- <article class="project additional-project" data-category="aircraft">
+            <div class="project-art dynamics">
+              <label>11 / PROPULSION</label>
+              <div class="art-readout">
+                <strong>∞ → 9</strong>
+                <span>TURBOJET / TURBOPROP / OTTO / STIRLING</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="kicker">CYCLE ANALYSIS <span>2024</span></div>
+              <h3>Propulsion & Thermodynamic Cycles</h3>
+              <p>
+                I solved an afterburning turbojet station by station in Python,
+                then compared workshop measurements on a centrifugal turbojet
+                and a TPE331-10 with ideal-cycle estimates.
+              </p>
+              <div class="tags">
+                <span>Python</span><span>Gas turbines</span
+                ><span>MATLAB</span><span>Workshop test</span>
+              </div>
+              <div class="project-foot">
+                Individual cycle model · team workshop studies
+                <a href="projects/propulsion.html" aria-label="View propulsion case study">↗</a>
+              </div>
+            </div>
+          </article> -->
+
+        </div>
+      </section>
+      <section id="engineering-highlights" class="engineering-highlights">
+        <div class="wrap">
+          <div class="highlights-heading">
+            <div>
+              <div class="eyebrow">ENGINEERING HIGHLIGHTS</div>
+              <h2>From definition<br /><em>to execution.</em></h2>
+            </div>
+            <p>
+              Three connected domains, supported by project and role evidence
+              rather than unverified performance claims.
+            </p>
+          </div>
+          <div class="highlight-grid">
+            <article class="highlight">
+              <span class="highlight-index">01 / SOFTWARE</span>
+              <h3>VLMPy</h3>
+              <p>
+                Public Python Vortex Lattice Method application with documented
+                geometry, distributions, and reference comparisons.
+              </p>
+            </article>
+            <article class="highlight">
+              <span class="highlight-index">02 / SPACE</span>
+              <h3>UAXSat IV</h3>
+              <p>
+                3U student satellite programme: team leadership, structural
+                design, composites, and integration.
+              </p>
+            </article>
+            <article class="highlight">
+              <span class="highlight-index">03 / INDUSTRY</span>
+              <h3>Manufacturing engineering</h3>
+              <p>
+                Production support, 3D work orders, process improvement, and
+                reporting automation in aerospace environments.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="github-projects" class="section wrap github-section">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">02 / OPEN SOURCE & PERSONAL PROJECTS</div>
+            <h2>Every repo has<br /><em>a story.</em></h2>
+          </div>
+          <p>
+            Explore my public GitHub repositories. Open any project to read its
+            integrated wiki, documentation, technical overview and links.
+          </p>
+        </div>
+        <div class="repo-toolbar">
+          <label class="repo-search"
+            ><span>⌕</span
+            ><input
+              id="repo-search"
+              type="search"
+              placeholder="Search repositories, languages, topics…"
+              aria-label="Search GitHub repositories"
+          /></label>
+          <div class="repo-filters" id="repo-filters">
+            <button class="active" data-repo-filter="all">
+              All repositories</button
+            ><button data-repo-filter="aerospace">Aerospace</button
+            ><button data-repo-filter="software">Software & tools</button
+            ><button data-repo-filter="other">Other</button>
+          </div>
+        </div>
+        <div id="repo-status" class="repo-status" role="status">
+          Loading public repositories from GitHub…
+        </div>
+        <div id="repo-grid" class="repo-grid" aria-live="polite"></div>
+        <div class="repo-bottom">
+          <span
+            >Repository data and project documentation are sourced from
+            GitHub.</span
+          ><a
+            href="https://github.com/JaviLendi?tab=repositories"
+            target="_blank"
+            rel="noreferrer"
+            >View all on GitHub ↗</a
+          >
+        </div>
+      </section>
+      <div class="wiki-modal" id="wiki-modal" aria-hidden="true">
+        <div class="wiki-backdrop" data-wiki-close></div>
+        <article
+          class="wiki-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="wiki-title"
+        >
+          <header class="wiki-header">
+            <div>
+              <div class="eyebrow" id="wiki-kicker">PROJECT WIKI / GITHUB</div>
+              <h2 id="wiki-title">Project</h2>
+            </div>
+            <button
+              class="wiki-close"
+              type="button"
+              aria-label="Close project wiki"
+              data-wiki-close
+            >
+              ×
+            </button>
+          </header>
+          <div class="wiki-meta" id="wiki-meta"></div>
+          <div class="wiki-content" id="wiki-content">
+            <p>Loading project documentation…</p>
+          </div>
+          <footer class="wiki-footer">
+            <span>Project wiki generated from repository documentation.</span
+            ><a id="wiki-source" href="#" target="_blank" rel="noreferrer"
+              >Open repository ↗</a
+            >
+          </footer>
+        </article>
+      </div>
+      <section id="experience" class="section career">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">03 / CAREER</div>
+              <h2>Where engineering<br /><em>meets execution.</em></h2>
+            </div>
+            <div>
+              <p>
+                Industrial production, process improvement and hands-on
+                aerospace design — each role has shaped how I approach
+                engineering.
+              </p>
+              <p class="career-thread">
+                ENGINEERING DESIGN → MANUFACTURING → PROCESS IMPROVEMENT →
+                SOFTWARE TOOLS
+              </p>
+            </div>
+          </div>
+          <div class="timeline">
+            <article>
+              <div class="date">JUN 2025 — PRESENT <b>CURRENT</b></div>
+              <div>
+                <div class="company">ALTEN <span>· Getafe, Spain</span></div>
+                <h3>Manufacturing & Process Engineer</h3>
+                <p>
+                  Supporting Airbus Defence and Space’s Eurofighter programme,
+                  focusing on production support, 3D work orders and
+                  industrialisation for the Final Assembly Line.
+                </p>
+                <ul>
+                  <li>
+                    Generate, modify and validate 3D work orders using CMS /
+                    CATIA Manufacturing Solutions.
+                  </li>
+                  <li>
+                    Review manufacturing documentation and assembly
+                    instructions, supporting quality, safety and traceability.
+                  </li>
+                  <li>
+                    Develop build processes, analyse production data and
+                    automate repetitive reporting with Excel and VBA.
+                  </li>
+                  <li>
+                    Support shop-floor issue resolution, change management and
+                    continuous improvement.
+                  </li>
+                </ul>
+                <!-- <p><a class="textlink" href="projects/manufacturing.html">More ↗</a></p> -->
+                <div class="tags">
+                  <span>CATIA V5 / CMS</span><span>Build Process</span
+                  ><span>Excel / VBA</span><span>SAP</span>
+                </div>
+              </div>
+            </article>
+            <article>
+              <div class="date">JAN 2025 — MAY 2025</div>
+              <div>
+                <div class="company">
+                  ACCENTURE <span>· Getafe, Spain</span>
+                </div>
+                <h3>Manufacturing & Operations Engineer — Internship</h3>
+                <p>
+                  Production support across Eurofighter and RHW final assembly,
+                  and MRO activities for Eurofighter, F-5 and Harrier
+                  programmes.
+                </p>
+                <ul>
+                  <li>
+                    Tracked project scope, planning, costs, deliverables,
+                    actions and milestones.
+                  </li>
+                  <li>
+                    Defined and monitored KPIs and produced weekly production
+                    and risk reports.
+                  </li>
+                  <li>
+                    Built Excel/VBA report automations to improve efficiency and
+                    traceability.
+                  </li>
+                </ul>
+                <div class="tags">
+                  <span>Production Planning</span><span>KPI</span
+                  ><span>VBA</span><span>Data Analysis</span>
+                </div>
+              </div>
+            </article>
+            <article>
+              <div class="date">MAR 2023 — NOV 2024</div>
+              <div>
+                <div class="company">
+                  UAX BLUEJAY PROGRAMME <span>· Madrid / León, Spain</span>
+                </div>
+                <h3>Team Leader & Design Engineer</h3>
+                <p>
+                  Coordinated technical work and integration for a 3U CubeSat
+                  programme, contributing to structural design, manufacturing
+                  and flight-test activities.
+                </p>
+                <ul>
+                  <li>
+                    Designed structural elements using composite materials, 3D
+                    printing and CNC manufacturing.
+                  </li>
+                  <li>
+                    Coordinated team tasks, software, instrumentation and system
+                    validation.
+                  </li>
+                </ul>
+                <div class="tags">
+                  <span>Structures</span><span>Composites</span
+                  ><span>CATIA V5</span><span>Fusion 360</span>
+                </div>
+              </div>
+            </article>
+            <article>
+              <div class="date">JUN 2023 — JUL 2023</div>
+              <div>
+                <div class="company">
+                  ELA AVIACIÓN <span>· Madrid, Spain</span>
+                </div>
+                <h3>Flight Systems Design Engineer — Internship</h3>
+                <p>
+                  Preliminary aircraft and flight-system design, including
+                  aerodynamic surfaces, fixed-wing aircraft and autogyro
+                  concepts.
+                </p>
+                <ul>
+                  <li>
+                    Estimated aircraft weight and performance and assessed
+                    stability and handling qualities.
+                  </li>
+                  <li>
+                    Produced preliminary geometry and technical calculations
+                    under time constraints.
+                  </li>
+                </ul>
+                <!-- <p><a class="textlink" href="projects/flight-systems.html">More ↗</a></p> -->
+                <div class="tags">
+                  <span>Aircraft Design</span><span>MATLAB</span
+                  ><span>Octave</span><span>CATIA V5</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="section wrap about">
+        <div>
+          <div class="eyebrow">04 / ABOUT ME</div>
+          <h2>Engineering is<br />more than <em>the model.</em></h2>
+          <p class="lead">
+            I’m Javier Lendínez, an aerospace engineer focused on connecting
+            engineering intent with how a product is built, tested, and
+            improved.
+          </p>
+          <p>
+            I currently support Airbus Defence and Space’s Eurofighter Final
+            Assembly Line through ALTEN. My work spans CMS/CATIA 3D work orders,
+            assembly documentation, build-process development, traceability, and
+            shop-floor issue resolution. I also use production data and
+            Excel/VBA automation to support recurring reporting and operational
+            decisions.
+          </p>
+          <p>
+            Previously, at Accenture, I supported Eurofighter and RHW final
+            assembly and MRO activities for Eurofighter, F-5, and Harrier
+            programmes. I tracked scope, milestones, risks, and KPIs, and built
+            reporting automations that improved efficiency and traceability.
+          </p>
+          <p>
+            My aerospace work also includes leading design and integration tasks
+            for a 3U CubeSat, with structural design, composites, 3D printing,
+            and CNC manufacturing. For my final-year project, I developed VLMPy,
+            a Python Vortex Lattice Method tool for lifting-surface analysis;
+            I received highest honours for the project.
+          </p>
+          <p>
+            I’m now pursuing an M.Sc. in Aeronautical Engineering. Outside work,
+            I served as President of UAX AeroClub, contributing to
+            aeromodelling, aircraft builds, and experimental flight activities.
+          </p>
+          <a
+            class="textlink"
+            href="https://github.com/JaviLendi"
+            target="_blank"
+            rel="noreferrer"
+            >Explore my GitHub ↗</a
+          >
+        </div>
+        <aside>
+          <div class="info">
+            <label>EDUCATION</label
+            ><strong>M.Sc. Aeronautical Engineering</strong
+            ><span>Universidad Alfonso X el Sabio · 2025–present</span
+            ><strong>B.Sc. Aerospace Engineering</strong
+            ><span>Specialisation in Aerospace Vehicles · 2022–2025</span
+            ><span class="accent">Honours — Final Degree Project</span>
+          </div>
+          <div class="info">
+            <label>TECHNICAL TOOLKIT</label>
+            <div class="tags">
+              <span>CATIA V5 / CMS</span><span>Python</span
+              ><span>Excel / VBA</span><span>MATLAB</span><span>Plotly</span
+              ><span>ANSYS</span><span>Nastran / Patran</span
+              ><span>HyperWorks</span><span>Fortran</span><span>Julia</span
+              ><span>Git / GitHub</span><span>SAP</span>
+            </div>
+          </div>
+          <div class="info">
+            <label>LANGUAGES</label>
+            <div class="lang"><span>Spanish</span><b>Native</b></div>
+            <div class="lang">
+              <span>English</span><b>C1 · Cambridge CAE</b>
+            </div>
+            <div class="lang"><span>French</span><b>Basic</b></div>
+          </div>
+          <div class="info certifications">
+            <label>CERTIFICATIONS</label>
+            <ul class="cert-list">
+              <li>
+                <span class="cert-mark" aria-hidden="true">CAE</span>
+                <div>
+                  <strong>Certificate in Advanced English</strong
+                  ><span>Cambridge English · C1 · 2018</span>
+                </div>
+              </li>
+              <li>
+                <span class="cert-mark" aria-hidden="true">UAS</span>
+                <div>
+                  <strong>UAS Pilot Qualifications</strong
+                  ><span>AESA · A2, Open A1/A3, STS-01 / STS-02 · 2025</span>
+                </div>
+              </li>
+              <li>
+                <span class="cert-mark" aria-hidden="true">PM</span>
+                <div>
+                  <strong>Agile Project Management</strong
+                  ><span>Google · Scrum, Kanban, Lean · 2023</span>
+                </div>
+              </li>
+              <li>
+                <span class="cert-mark" aria-hidden="true">PY</span>
+                <div>
+                  <strong>Data Analysis with Python</strong
+                  ><span
+                    >Ironhack · Pandas, NumPy, Matplotlib, Scikit-learn,
+                    TensorFlow · 2023</span
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+      <section id="contact" class="contact">
+        <div class="wrap">
+          <div class="eyebrow">05 / GET IN TOUCH</div>
+          <h2>Have a challenge<br />worth <em>solving?</em></h2>
+          <p>
+            I’m always interested in engineering, aerospace technology and
+            opportunities to build better processes and systems.
+          </p>
+          <div class="actions">
+            <a
+              class="btn"
+              href="https://www.linkedin.com/in/javierlendinez"
+              target="_blank"
+              rel="noreferrer"
+              >Contact on LinkedIn ↗</a
+            ><a
+              class="outline"
+              href="https://github.com/JaviLendi"
+              target="_blank"
+              rel="noreferrer"
+              >GitHub ↗</a
+            ><a
+              class="outline"
+              href="assets/javier-lendinez-cv.pdf"
+              target="_blank"
+              rel="noreferrer"
+              >CV ↗</a
+            >
+          </div>
+        </div>
+        <div class="orbit o1"></div>
+        <div class="orbit o2"></div>
+      </section>
+    </main>
+    <footer class="footer wrap">
+      <a class="logo" href="#top" aria-label="Back to top">
+        <div class="logo-container logo-container--small" aria-hidden="true">
+          <div class="diamond d3"></div>
+          <div class="diamond d2"></div>
+          <div class="diamond d1"></div>
+          <div class="text-wrapper"><span class="letters">JL</span><span class="dot"></span></div>
+        </div>
+      </a><span>Designed with precision. Built with curiosity.</span
+      ><span>© <span id="year">2026</span></span
+      ><a href="#top">BACK TO TOP ↑</a>
+    </footer>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/three@0.146.0/build/three.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/controls/OrbitControls.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/loaders/STLLoader.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/utils/BufferGeometryUtils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="assets/eurofighter-mesh-data.js"></script>
+    <script defer src="CFD/results/eurofighter-streamlines-t200-data.js"></script>
+    <script defer src="assets/hero-aircraft.js"></script>
+    <script defer src="script.js"></script>
+    <script>
+      (function () {
+        var intro = document.querySelector('.landing-intro');
+        if (!intro) return;
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        var clamp = function (v) { return Math.min(1, Math.max(0, v)); };
+        var ticking = false;
+
+        function updateScroll() {
+          ticking = false;
+          var rect = intro.getBoundingClientRect();
+          var distance = Math.max(rect.height * 0.85, 1);
+          var p = clamp((-rect.top) / distance);
+
+          // 1) El texto desaparece primero (0% -> 45% del scroll)
+          var textOut = clamp(p / 0.45);
+          intro.style.setProperty('--text-o', (1 - textOut).toFixed(3));
+          intro.style.setProperty('--text-y', (textOut * 5).toFixed(1) + 'rem');
+          intro.style.setProperty('--text-b', (textOut * 5).toFixed(1) + 'rem');
+
+          // 2) Los rombos se deslizan hacia abajo y desaparecen después (25% -> 100% del scroll)
+          var dOut = clamp((p - 0.25) / 0.75);
+          intro.style.setProperty('--d-o', (1 - dOut).toFixed(3));
+          intro.style.setProperty('--d1-y', (dOut * 50).toFixed(1) + 'rem');
+          intro.style.setProperty('--d2-y', (dOut * 60).toFixed(1) + 'rem');
+          intro.style.setProperty('--d3-y', (dOut * 70).toFixed(1) + 'rem');
+        }
+
+        window.addEventListener('scroll', function () {
+          if (!ticking) {
+            ticking = true;
+            window.requestAnimationFrame(updateScroll);
+          }
+        }, { passive: true });
+
+        updateScroll();
+      })();
+    </script>
+
+  </body>
+</html>

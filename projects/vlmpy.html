@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0f16">
+
+  <meta
+    name="description"
+    content="I developed VLMPy, a Python Vortex Lattice Method tool for lifting-surface analysis, geometry discretisation, and documented XFLR5 comparisons."
+  >
+
+  <meta property="og:type" content="article">
+  <meta
+    property="og:title"
+    content="VLMPy — Aerodynamic Analysis Tool | Javier Lendínez"
+  >
+  <meta
+    property="og:description"
+    content="I developed a VLM tool for geometry discretisation, aerodynamic visualisation, and comparison with XFLR5."
+  >
+  <meta
+    property="og:url"
+    content="https://javilendi.github.io/projects/vlmpy.html"
+  >
+  <meta
+    property="og:image"
+    content="https://javilendi.github.io/assets/vlmpy-welcome.png"
+  >
+  <meta
+    property="og:image:alt"
+    content="VLMPy aerodynamic analysis application welcome screen"
+  >
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link
+    rel="canonical"
+    href="https://javilendi.github.io/projects/vlmpy.html"
+  >
+
+  <title>VLMPy — Aerodynamic Analysis Tool | Javier Lendínez</title>
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../case-studies.css">
+
+  <style>
+    .case-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body class="case-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="topbar">
+    <a
+      class="logo"
+      href="../index.html"
+      aria-label="Javier Lendínez portfolio"
+    >
+      JL<span>.</span>
+    </a>
+
+    <nav id="primary-nav" aria-label="Main navigation">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#github-projects">GitHub</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <a
+      class="download"
+      href="../assets/javier-lendinez-cv.pdf"
+      download
+    >
+      Download CV ↓
+    </a>
+
+    <button
+      class="menu"
+      type="button"
+      aria-label="Open menu"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+  </header>
+
+  <main id="main-content" class="wrap">
+    <section class="case-hero">
+      <div class="case-breadcrumb">
+        <a href="../index.html">Portfolio</a>
+        /
+        <a href="../index.html#projects">Projects</a>
+        / VLMPy
+      </div>
+
+      <div class="case-kicker">
+        01 / AERODYNAMICS &amp; ENGINEERING SOFTWARE
+      </div>
+
+      <h1>VLMPy — <em>Aerodynamic Analysis Tool</em></h1>
+
+      <p class="case-deck">
+        I developed a Python application and toolkit to model lifting
+        surfaces with the Vortex Lattice Method, inspect panel geometry,
+        and explore lift and drag distributions.
+      </p>
+
+      <div class="case-tags">
+        <span>Python</span>
+        <span>Vortex Lattice Method</span>
+        <span>Flask</span>
+        <span>Plotly</span>
+        <span>NumPy</span>
+      </div>
+
+      <dl class="case-meta">
+        <div>
+          <dt>Project</dt>
+          <dd>Aerospace engineering final-year project</dd>
+        </div>
+
+        <div>
+          <dt>Scope</dt>
+          <dd>Subsonic, inviscid lifting-surface analysis</dd>
+        </div>
+
+        <div>
+          <dt>Source</dt>
+          <dd>
+            <a
+              class="case-back"
+              href="https://github.com/JaviLendi/VLMPy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Public repository ↗
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <div class="case-layout">
+      <div class="case-content">
+        <section class="study-section" id="challenge">
+          <div class="study-number">01 — THE CHALLENGE</div>
+
+          <h2>Make aerodynamic analysis inspectable</h2>
+
+          <p>
+            I developed VLMPy for my final-year project to make
+            lifting-surface geometry, discretisation, and aerodynamic
+            distributions inspectable in one workflow. My aim was to
+            compare wing configurations under defined flight conditions
+            and make each result easier to trace back to its inputs.
+          </p>
+
+          <p>
+            I scoped the tool to subsonic, inviscid flow. I treat it as an
+            engineering analysis aid, not a substitute for viscous CFD,
+            wind-tunnel testing, or flight-test evidence.
+          </p>
+        </section>
+
+        <section class="study-section" id="approach">
+          <div class="study-number">02 — ENGINEERING APPROACH</div>
+
+          <h2>
+            Discretise the lifting surfaces, then solve for circulation
+          </h2>
+
+          <p>
+            I divide each lifting surface into spanwise and chordwise
+            panels. For each panel, my pre-processor calculates control
+            points and normals; the solver assembles the vortex influence
+            matrix and solves the no-penetration system for circulation.
+          </p>
+
+          <code class="case-equation">
+            P<sub>ij</sub> Γ<sub>j</sub> = w<sub>i</sub>
+          </code>
+
+          <p>
+            I solve the circulation system numerically, then calculate
+            force and coefficient distributions from the panel results.
+            I keep geometry, flight conditions, and panel counts as
+            explicit inputs so I can trace every output to its setup.
+          </p>
+
+          <div class="case-note">
+            Model boundary: subsonic, inviscid analysis of lifting surfaces. Viscous effects,
+            transonic flow, and fuselage aerodynamics are outside the
+            stated scope.
+          </div>
+        </section>
+
+        <section class="study-section" id="implementation">
+          <div class="study-number">03 — IMPLEMENTATION</div>
+
+          <h2>From the interface to the panel model</h2>
+
+          <p>
+            I combined the Python VLM core with a Flask-backed interface,
+            a PyQt5 desktop wrapper, and Plotly/Matplotlib visualisations.
+            I also published a Python API and Jupyter examples in the
+            project repository.
+          </p>
+
+          <figure class="case-figure">
+            <img
+              src="../assets/case-studies/vlmpy/vlmpy-welcome.png"
+              alt="VLMPy application welcome screen"
+              decoding="async"
+            >
+            <figcaption>
+              VLMPy application · welcome screen
+            </figcaption>
+          </figure>
+
+          <h3>Airfoil definition and inspection</h3>
+
+          <p>
+            I made the geometry configurable through parameters such as
+            sweep, dihedral, taper, and control-surface settings, then
+            exposed flight-condition inputs including angle of attack,
+            sideslip, and airspeed. The repository also includes NACA
+            airfoil utilities, so I could generate a section and inspect
+            how a change to the wing definition affected the panel model.
+          </p>
+
+          <figure class="case-figure">
+            <img
+              src="../assets/case-studies/vlmpy/vlmpy-airfoil.png"
+              alt="VLMPy airfoil interface"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>
+              Airfoil workflow · application interface
+            </figcaption>
+          </figure>
+
+          <h3>Wing geometry and panel discretisation</h3>
+
+          <p>
+            I designed the outputs to show more than a single coefficient:
+            I can inspect the 3D discretised surfaces, local lift
+            distributions, and aerodynamic plots through the application
+            or Python interface. This makes the intermediate geometry
+            and the final distributions available in the same analysis
+            workflow.
+          </p>
+
+          <figure class="case-figure">
+            <img
+              src="../assets/case-studies/vlmpy/vlmpy-wing-mesh.png"
+              alt="VLMPy wing mesh visualisation"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>
+              Wing geometry · panel discretisation
+            </figcaption>
+          </figure>
+        </section>
+
+        <section class="study-section" id="validation">
+          <div class="study-number">04 — VALIDATION &amp; RESULTS</div>
+
+          <h2>
+            Compare outputs, and state what the evidence does not say
+          </h2>
+
+          <p>
+            I compared aerodynamic curves and distributions against
+            XFLR5. My report documents the comparison workflow, but it
+            does not provide a complete error budget or mesh-convergence
+            threshold, so I do not claim a general accuracy percentage
+            here.
+          </p>
+
+          <p>
+            The screenshots below show the application's airfoil and
+            wing results views. They are presented separately from the
+            XFLR5 comparison discussed above.
+          </p>
+
+          <h3>Airfoil results</h3>
+
+          <figure class="case-figure">
+            <img
+              src="../assets/case-studies/vlmpy/vlmpy-airfoilresults.png"
+              alt="VLMPy airfoil results view"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>
+              Airfoil results · first view
+            </figcaption>
+          </figure>
+
+          <figure class="case-figure">
+            <img
+              src="../assets/case-studies/vlmpy/vlmpy-airfoilresults2.png"
+              alt="VLMPy additional airfoil results view"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>
+              Airfoil results · second view
+            </figcaption>
+          </figure>
+
+          <h3>Wing results</h3>
+
+          <figure class="case-figure">
+            <img
+              src="../assets/case-studies/vlmpy/vlmpy-wingsresults.png"
+              alt="VLMPy wing analysis results view"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>
+              Wing analysis · results view
+            </figcaption>
+          </figure>
+
+          <div class="case-note">
+            Next step: implement a compressible aerodynamic analysis module and an unsteady flow capability (UVLM [Unsteady Vortex Lattice Method]). Implement the panel method to take the fuselage into account.
+          </div>
+        </section>
+
+        <section class="study-section" id="reflection">
+          <div class="study-number">05 — WHAT I LEARNED</div>
+
+          <h2>What I would carry forward</h2>
+
+          <p>
+            My main engineering lesson was to keep intermediate states
+            visible. Geometry, panel layout, circulation, and local
+            distributions help me explain a coefficient instead of
+            treating it as a black-box output.
+          </p>
+
+          <p>
+            In a next iteration, I would automate mesh-refinement checks
+            and make validation cases reproducible from saved inputs,
+            so I could audit and extend each comparison.
+          </p>
+
+          <p>
+            The next steps involve extending the aerodynamic capabilities of VLMPy to handle compressible and unsteady flows, as well as incorporating fuselage effects through the panel method.
+          </p>
+
+          <a class="case-next" href="uaxsat.html">
+            Next case study: UAXSat IV →
+          </a>
+        </section>
+      </div>
+
+      <aside class="study-aside" aria-label="Case study navigation">
+        <h2>ON THIS PAGE</h2>
+
+        <nav class="study-toc">
+          <a href="#challenge">01 Challenge</a>
+          <a href="#approach">02 Approach</a>
+          <a href="#implementation">03 Implementation</a>
+          <a href="#validation">04 Validation</a>
+          <a href="#reflection">05 Reflection</a>
+        </nav>
+
+        <a
+          class="study-source"
+          href="https://github.com/JaviLendi/VLMPy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Explore source code ↗
+        </a>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="case-footer wrap">
+    <a href="../index.html#projects">← All Projects</a>
+    <span>Javier Lendínez · Aerospace Engineering</span>
+  </footer>
+
+  <script src="project-pages.js" defer></script>
+</body>
+</html>

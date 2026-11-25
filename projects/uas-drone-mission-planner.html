@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0f16">
+  <meta name="description" content="A Python-based UAS, RPAS and drone mission-planning application for route design, ENAIRE airspace awareness, flight profiles and safety analysis.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="UAS & Drone Mission Planner | Javier Lendínez">
+  <meta property="og:description" content="I developed a modular Python application for unmanned-aircraft mission planning, route analysis, airspace data and safety review.">
+  <meta property="og:url" content="https://javilendi.github.io/projects/uas-drone-mission-planner.html">
+  <meta property="og:image" content="https://javilendi.github.io/assets/og-portfolio.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://javilendi.github.io/projects/uas-drone-mission-planner.html">
+  <title>UAS & Drone Mission Planner | Javier Lendínez</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../case-studies.css">
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="topbar">
+    <a class="logo" href="../index.html" aria-label="Javier Lendínez portfolio">JL<span>.</span></a>
+    <nav id="primary-nav" aria-label="Main navigation"><a href="../index.html#projects">Projects</a><a href="../index.html#github-projects">GitHub</a><a href="../index.html#experience">Experience</a><a href="../index.html#contact">Contact</a></nav>
+    <a class="download" href="../assets/javier-lendinez-cv.pdf" download>Download CV ↓</a>
+    <button class="menu" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+  </header>
+  <main id="main-content" class="wrap">
+    <section class="case-hero">
+      <div class="case-breadcrumb"><a href="../index.html">Portfolio</a> / <a href="../index.html#projects">Projects</a> / UAS &amp; drone mission planning</div>
+      <div class="case-kicker">06 / UNMANNED AIRCRAFT · MISSION PLANNING</div>
+      <h1>UAS &amp; Drone <em>Mission Planner</em></h1>
+      <p class="case-deck">I developed a modular Python application to design, visualise and review missions for unmanned aircraft systems — from remotely piloted aircraft to other UAS and drone operations.</p>
+      <div class="case-tags"><span>Python</span><span>UAS / RPAS / Drones</span><span>Streamlit</span><span>ENAIRE INSIGNIA</span><span>AIP data</span><span>Route planning</span><span>Safety analysis</span></div>
+      <div class="case-meta">
+        <div><dt>Role</dt><dd>Individual project</dd></div>
+        <div><dt>Course</dt><dd>Advanced Aerospace Vehicle Design · Unmanned Aircraft Systems</dd></div>
+        <div><dt>Scenario</dt><dd>MQ-9 maritime-surveillance study · May 2026</dd></div>
+      </div>
+    </section>
+    <div class="case-layout">
+      <div class="case-content">
+        <section class="study-section" id="challenge">
+          <div class="study-number">01 — THE CHALLENGE</div>
+          <h2>Plan unmanned-aircraft missions around constraints, not just waypoints</h2>
+          <p>The application grew from an academic maritime-surveillance scenario using the MQ-9 Predator B as a reference platform. I then structured the software around reusable mission-planning functions — route geometry, mission points, airspace information, flight profiles and safety considerations — rather than tying the whole workflow to a single aircraft.</p>
+          <p>Although the original case study uses an RPAS, the application is intended as a broader planning environment for UAS and drones. The aircraft, mission parameters, route and operational assumptions can be adapted to different unmanned-aircraft scenarios. It remains an engineering and planning aid, not an operational flight-release or airspace-approval system.</p>
+          <figure class="case-figure">
+            <img src="../assets/case-studies/rpas-mission/app/APP01.png" alt="Application interface showing the planned route for the simulated mission" width="1600" height="907" loading="lazy">
+            <figcaption>Application interface showing the planned route for the simulated mission.</figcaption>
+          </figure>
+        </section>
+        <section class="study-section" id="workflow">
+          <div class="study-number">02 — PLANNING WORKFLOW</div>
+          <h2>From mission definition to an inspectable route</h2>
+          <div class="process-flow" role="img" aria-label="Mission-planning workflow from mission definition to route and safety review">
+            <div class="flow-step"><b>01 / DEFINE</b><span>Mission objective, aircraft assumptions and operating framework</span></div>
+            <div class="flow-step"><b>02 / CONTEXTUALISE</b><span>ENAIRE INSIGNIA layers, AIP references and airspace constraints</span></div>
+            <div class="flow-step"><b>03 / DESIGN</b><span>Mission points, route patterns, waypoints and flight profiles</span></div>
+            <div class="flow-step"><b>04 / REVIEW</b><span>Route checks, airspace conflicts and qualitative risk assessment</span></div>
+          </div>
+          <div class="flow-note">The workflow supports engineering analysis and preparation. Current aeronautical publications, NOTAM, geozones, authorisations and operational procedures must always be checked independently.</div>
+          <div class="case-gallery">
+            <figure class="case-figure">
+              <img src="../assets/case-studies/rpas-mission/altitude-profile.webp" alt="Altitude over time for my simulated RPAS mission, divided into four phases" width="1600" height="907" loading="lazy">
+              <figcaption>I used this profile to review climb, transit, patrol, and return phases. It contains no route map or geographic coordinates.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="../assets/case-studies/rpas-mission/altitude-distance.webp" alt="Simulated mission altitude plotted against cumulative distance" width="1600" height="795" loading="lazy">
+              <figcaption>I compared altitude with cumulative distance to inspect the vertical profile across the simulated mission phases.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="../assets/case-studies/rpas-mission/speed-profile.webp" alt="Simulated RPAS forward speed plotted against cumulative distance" width="1600" height="908" loading="lazy">
+              <figcaption>This plot let me inspect the planned forward-speed profile against the report's reference limits.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="../assets/case-studies/rpas-mission/mission-progression.webp" alt="Simulated mission progression shown as cumulative distance over time with phase changes" width="1600" height="907" loading="lazy">
+              <figcaption>I used time against distance to review phase transitions and waypoint progression without publishing a geographic route.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="../assets/case-studies/rpas-mission/risk-matrix.webp" alt="Qualitative probability and severity matrix for hazards considered in my academic UAS study" width="1371" height="1200" loading="lazy">
+              <figcaption>I used this qualitative matrix to organise example hazards by probability and severity; it is not an operational safety assessment.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="../assets/case-studies/rpas-mission/mission-profile-overview.webp" alt="Combined altitude and speed profiles from my academic maritime-surveillance mission report" width="1600" height="1060" loading="lazy">
+              <figcaption>This report overview places the simulated altitude and speed profiles side by side for comparison.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="../assets/case-studies/rpas-mission/coordination-profile.webp" alt="Simulated flight profile with coordination and airspace constraints from the source report" width="1600" height="1166" loading="lazy">
+              <figcaption>I used this coordination plot to examine the planned profile against the report's airspace and phase constraints.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="../assets/case-studies/rpas-mission/informative-profile.webp" alt="Informative mission profile and airspace summary from the source report" width="1600" height="1163" loading="lazy">
+              <figcaption>This companion chart summarises the academic profile and the constraints represented in the report.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="../assets/case-studies/rpas-mission/static-route-map.webp" alt="Static map of the planned academic UAS route with report waypoint labels" width="1600" height="1018" loading="lazy">
+              <figcaption>I include the map as a record of the coursework scenario, not as current aeronautical information or a route for execution.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="../assets/case-studies/rpas-mission/mission-map.webp" alt="Geographic mission map from the academic MQ-9 maritime-surveillance report" width="1600" height="552" loading="lazy">
+              <figcaption>This is the geographic map used in my report. Its route and airspace depiction are historical academic material and are not operationally valid.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="../assets/case-studies/rpas-mission/vertical-speed-ratio.webp" alt="Source-report ratio of climb and descent rates by mission segment, with values requiring verification" width="1600" height="908" loading="lazy">
+              <figcaption>The report's climb/descent ratio plot contains extreme values. I include it as source output, but it needs recalculation before interpretation.</figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="study-section" id="capabilities">
+          <div class="study-number">03 — APPLICATION CAPABILITIES</div>
+          <h2>One workspace, several connected planning tools</h2>
+          <p>The application brings together the main stages of an unmanned-aircraft mission study. Rather than treating the map as the whole plan, it links geographic definition, route construction, flight parameters, airspace context and safety review. A route can be created from manually placed points or generated as a coverage pattern; its geometry is then translated into an ordered waypoint sequence that can be inspected alongside the planned vertical profile and timing.</p>
+          <div class="capability-grid">
+            <article class="capability-card">
+              <h3>Interactive mission map</h3>
+              <p>Define and edit mission points, assign roles and phases, and draw the boundaries of the intended operating area directly on the map. The map brings the planned route together with aeronautical context from ENAIRE INSIGNIA, helping the user inspect where the mission sits in relation to displayed airspace structures and aerodromes.</p>
+            </article>
+            <article class="capability-card">
+              <h3>Route and waypoint design</h3>
+              <p>Build a route from ordered mission points or generate repeatable patterns for area coverage. The lawnmower generator, for example, uses parameters such as track spacing and pass heading to create a sequence of parallel legs and turns inside the selected area. Circular orbits and combined patterns are also supported. The resulting geometry can be reviewed and adjusted before it is transferred to the waypoint workflow.</p>
+            </article>
+            <article class="capability-card">
+              <h3>Flight profile and planning data</h3>
+              <p>Associate the route with flight-plan commands, altitude and speed targets, then inspect the distance and time associated with each leg. The waypoint table exposes both individual-leg values and cumulative mission figures, while the profile plot makes the vertical plan easier to assess over distance or elapsed time. The trajectory workspace also includes an ICAO-format flight-plan generator and downloadable planning output.</p>
+            </article>
+            <article class="capability-card">
+              <h3>Airspace and AIP awareness</h3>
+              <p>Display INSIGNIA geographic layers and inspect airspace-related information. A local SQLite catalogue indexes AIP documents, rule profiles and references to airspace zones to support source consultation.</p>
+            </article>
+            <article class="capability-card">
+              <h3>Safety and operating areas</h3>
+              <p>Define lateral and vertical limits for volumetric areas such as ZOUAS and ZOTER, assess route conflicts, and organise hazards in a qualitative probability-versus-severity risk matrix with mitigation notes.</p>
+            </article>
+            <article class="capability-card">
+              <h3>Mission review and visualisation</h3>
+              <p>Bring route metrics, waypoint data, altitude and speed profiles, airspace context and safety observations together for a more traceable mission review.</p>
+            </article>
+          </div>
+          <div class="case-gallery">
+            <figure class="case-figure">
+              <img src="../assets/case-studies/rpas-mission/app/APP02.png" alt="Interactive mission map showing a generated lawnmower survey pattern, mission route, ZOTER and ZOUAS geometry, and ENAIRE INSIGNIA airspace layers" width="1912" height="944" loading="lazy">
+              <figcaption><strong>Operating-area geometry and airspace context.</strong> This view combines the mission route with a generated lawnmower pattern and the ZOTER/ZOUAS areas drawn for the scenario. The map also displays selected INSIGNIA layers, such as airspace structures and aerodromes, so the route can be visually reviewed against the available geographic context. Track spacing, pass heading, orbit radius and orbit count can be configured from the planning panel; the geometry is then refreshed on the map.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="../assets/case-studies/rpas-mission/app/APP04.png" alt="Mission Waypoint Deck showing an editable waypoint flight-plan table, route distance and estimated time, and the mission altitude profile" width="1910" height="947" loading="lazy">
+              <figcaption><strong>Waypoint-level flight-plan review.</strong> The Mission Waypoint Deck turns the route into an ordered flight-plan table. Each row identifies a waypoint and its coordinates, command, planned altitude and speed, together with leg distance, cumulative distance and estimated segment and elapsed times. The summary at the side provides an at-a-glance view of waypoint count, total route distance and preliminary estimated time. Below, the altitude profile can be examined against cumulative distance or elapsed time, making it easier to review climb, cruise and descent transitions. Values shown here belong to the illustrated planning scenario.</figcaption>
+            </figure>
+          </div>
+          <div class="case-note">Some calculations and rule checks depend on user-entered assumptions, the available data layers and the state of the local AIP catalogue. Outputs are decision-support information for study, not an automated operational authorisation.</div>
+        </section>
+        <section class="study-section" id="implementation">
+          <div class="study-number">04 — APPLICATION & SOFTWARE ARCHITECTURE</div>
+          <h2>A modular application for the complete mission-planning workflow</h2>
+          <p>I built the application in Python with a Streamlit interface and a modular codebase. Mission logic, route generation, flight-profile calculations, waypoint compliance, safety analysis, airspace-data access, parsing and visualisation are organised into separate components. This separation makes the planning workflow easier to maintain and allows individual capabilities to evolve without coupling every feature to the user interface.</p>
+          <p>The interface is organised into six working areas: an interactive map and mission-point editor; a mission summary; a waypoint and flight-plan editor; safety analysis; trajectory and flight-profile tools; and an AIP/ENAIRE reference database. Together, they connect mission geometry with performance assumptions and the airspace context in which a route is being considered.</p>
+          <p>For route design, the planner supports user-defined mission points and operational roles, boundary-crossing points, and generated patterns such as lawnmower tracks, circular orbits and combined patterns within a defined operating area. In a typical area-survey workflow, the user first defines the operating geometry and configures the pattern parameters; the generated legs and turns are then represented as route points. This creates a clear link between the shape drawn on the map and the waypoint sequence used for flight-plan review.</p>
+          <p>The waypoint editor provides a more detailed view of that sequence. Coordinates, flight-plan commands, altitude and speed can be reviewed per waypoint, while leg distance, cumulative distance and estimated times describe how the mission progresses. Editing applicable planning values updates the derived route metrics, and the altitude-profile view can use either cumulative distance or elapsed time as its horizontal axis. This makes it possible to review the geographic and vertical aspects of the same plan without treating them as separate outputs.</p>
+          <div class="case-note">The application and its source code are currently private while I continue to refine and improve the system ahead of a future public release.</div>
+        </section>
+        <section class="study-section" id="validation">
+          <div class="study-number">05 — VALIDATION & LIMITS</div>
+          <h2>Airspace data, aircraft assumptions and operational context need continuous review</h2>
+          <p>The application combines an INSIGNIA interface for retrieving and displaying ENAIRE aeronautical layers with a local SQLite catalogue built from the AIP index. The catalogue organises source documents, rule profiles and detected references to airspace zones; it is intended to make source material easier to consult, not to replace the official publication. The project also includes persistent caching and an offline-oriented mode to reduce repeated requests and improve resilience when the external service is unavailable.</p><p>Any operational use would require further verification: confirming the freshness and interpretation of aeronautical data, checking applicable UAS rules for the specific operation, validating aircraft-performance inputs, and independently reviewing route and safety outputs. The software does not itself grant access to controlled or restricted airspace.</p>
+          <p>This is an academic engineering application. It does not provide an operational clearance, guarantee regulatory compliance, replace an authorised UAS flight-planning process, or establish that a mission is safe to execute.</p>
+        </section>
+        <section class="study-section" id="reflection">
+          <div class="study-number">06 — ENGINEERING TAKEAWAY</div>
+          <h2>Bring mission design, airspace awareness and safety into one workflow</h2>
+          <p>This project allowed me to combine aerospace mission analysis with software development: designing route geometry, handling aeronautical data, modelling flight profiles and making safety-related assumptions visible. Its central idea is to provide a common planning framework for unmanned aircraft — whether described as RPAS, UAS or drones — while keeping the aircraft-specific assumptions and operational limitations explicit.</p>
+          <a class="case-next" href="vlmpy.html">Next case study: VLMPy →</a>
+        </section>
+      </div>
+      <aside class="study-aside" aria-label="Case study navigation">
+        <h2>ON THIS PAGE</h2>
+        <nav class="study-toc"><a href="#challenge">01 Challenge</a><a href="#workflow">02 Workflow</a><a href="#capabilities">03 Capabilities</a><a href="#implementation">04 Software</a><a href="#validation">05 Validation</a><a href="#reflection">06 Takeaway</a></nav>
+        <a class="study-source" href="../index.html#projects">Explore all projects ↓</a>
+      </aside>
+    </div>
+  </main>
+  <footer class="case-footer wrap"><a href="../index.html#projects">← All Projects</a><span>Javier Lendínez · Aerospace Engineering</span></footer>
+  <script src="project-pages.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0f16">
+  <meta name="description" content="Gas-turbine cycle models, a workshop centrifugal turbojet, the Honeywell TPE331-10 turboprop, an Otto engine study, and a Stirling-cycle analysis.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Propulsion & Thermodynamic Cycles | Javier Lendínez">
+  <meta property="og:description" content="Station-by-station engine models, workshop measurements, and cycle studies from my aerospace degree.">
+  <meta property="og:url" content="https://javilendi.github.io/projects/propulsion.html">
+  <meta property="og:image" content="https://javilendi.github.io/assets/og-portfolio.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://javilendi.github.io/projects/propulsion.html">
+  <title>Propulsion & Thermodynamic Cycles | Javier Lendínez</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../case-studies.css">
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="topbar">
+    <a class="logo" href="../index.html" aria-label="Javier Lendínez portfolio">JL<span>.</span></a>
+    <nav id="primary-nav" aria-label="Main navigation"><a href="../index.html#projects">Projects</a><a href="../index.html#github-projects">GitHub</a><a href="../index.html#experience">Experience</a><a href="../index.html#contact">Contact</a></nav>
+    <a class="download" href="../assets/javier-lendinez-cv.pdf" download>Download CV ↓</a>
+    <button class="menu" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+  </header>
+  <main id="main-content" class="wrap">
+    <section class="case-hero">
+      <div class="case-breadcrumb"><a href="../index.html">Portfolio</a> / <a href="../index.html#projects">Projects</a> / Propulsion</div>
+      <div class="case-kicker">10 / PROPULSION & THERMODYNAMICS</div>
+      <h1>Propulsion & <em>thermodynamic cycles</em></h1>
+      <p class="case-deck">I modelled gas-turbine stations from freestream to nozzle, compared a workshop turbojet with its ideal cycle, and studied turboprop, Otto, and Stirling machines as separate coursework.</p>
+      <div class="case-tags"><span>Gas turbines</span><span>Python</span><span>MATLAB</span><span>ISA</span><span>Workshop test</span><span>Thermodynamics</span></div>
+      <div class="case-meta">
+        <div><dt>Individual study</dt><dd>Afterburning turbojet cycle, October 2024</dd></div>
+        <div><dt>Workshop studies</dt><dd>Olympus HP centrifugal turbojet · Honeywell TPE331-10</dd></div>
+        <div><dt>Programme</dt><dd>B.Sc. Aerospace Engineering · UAX</dd></div>
+      </div>
+    </section>
+    <div class="case-layout">
+      <div class="case-content">
+        <section class="study-section" id="challenge">
+          <div class="study-number">01 — THE CHALLENGE</div>
+          <h2>Close an engine cycle before quoting performance</h2>
+          <p>Thrust, specific fuel consumption, and thermal efficiency only make sense once every station obeys the same atmosphere, fuel, and component assumptions. In <em>Resolución de un turborreactor con postcombustor</em> I built that station model myself in Python and swept a restricted flight envelope, 0.25 &lt; Mach &lt; 0.95, looking for the operating region that maximised thrust.</p>
+          <p>The engine in that study is a two-spool turbojet: diffuser, low- and high-pressure compressors, combustor, two turbines, afterburner, and nozzles. I tracked stagnation pressure and temperature, mass flow, and stagnation enthalpy through the machine, then computed thrust, specific impulse, specific fuel consumption, and thermal, propulsive, and overall efficiency.</p>
+          <figure class="case-figure">
+            <svg class="station-diagram" viewBox="0 0 920 168" role="img" aria-label="Station sequence used in the afterburning turbojet model: freestream, diffuser, low-pressure compressor, high-pressure compressor, combustor, high-pressure turbine, low-pressure turbine, afterburner, and nozzle.">
+              <rect width="920" height="168" fill="#0b131b"/>
+              <g font-family="DM Mono, ui-monospace, monospace" font-size="11" fill="#9eb9c6" text-anchor="middle">
+                <g>
+                  <rect x="16" y="48" width="86" height="52" fill="none" stroke="#67b7c0"/>
+                  <text x="59" y="78" fill="#b9e7e8">∞</text>
+                  <text x="59" y="124" font-size="9">FREESTREAM</text>
+                </g>
+                <g>
+                  <rect x="118" y="48" width="86" height="52" fill="none" stroke="#67b7c0"/>
+                  <text x="161" y="78" fill="#b9e7e8">2</text>
+                  <text x="161" y="124" font-size="9">DIFFUSER</text>
+                </g>
+                <g>
+                  <rect x="220" y="48" width="86" height="52" fill="none" stroke="#67b7c0"/>
+                  <text x="263" y="78" fill="#b9e7e8">3</text>
+                  <text x="263" y="124" font-size="9">LPC</text>
+                </g>
+                <g>
+                  <rect x="322" y="48" width="86" height="52" fill="none" stroke="#67b7c0"/>
+                  <text x="365" y="78" fill="#b9e7e8">4</text>
+                  <text x="365" y="124" font-size="9">HPC</text>
+                </g>
+                <g>
+                  <rect x="424" y="48" width="86" height="52" fill="none" stroke="#f0a86b"/>
+                  <text x="467" y="78" fill="#f0a86b">5</text>
+                  <text x="467" y="124" font-size="9">COMBUSTOR</text>
+                </g>
+                <g>
+                  <rect x="526" y="48" width="86" height="52" fill="none" stroke="#67b7c0"/>
+                  <text x="569" y="78" fill="#b9e7e8">6</text>
+                  <text x="569" y="124" font-size="9">HPT</text>
+                </g>
+                <g>
+                  <rect x="628" y="48" width="86" height="52" fill="none" stroke="#67b7c0"/>
+                  <text x="671" y="78" fill="#b9e7e8">7</text>
+                  <text x="671" y="124" font-size="9">LPT</text>
+                </g>
+                <g>
+                  <rect x="730" y="48" width="86" height="52" fill="none" stroke="#f0a86b"/>
+                  <text x="773" y="78" fill="#f0a86b">8</text>
+                  <text x="773" y="124" font-size="9">AFTERBURNER</text>
+                </g>
+                <g>
+                  <rect x="832" y="48" width="72" height="52" fill="none" stroke="#67b7c0"/>
+                  <text x="868" y="78" fill="#b9e7e8">9</text>
+                  <text x="868" y="124" font-size="9">NOZZLE</text>
+                </g>
+              </g>
+              <g stroke="#f0a86b" stroke-width="1.2" fill="none">
+                <path d="M102 74H118M204 74H220M306 74H322M408 74H424M510 74H526M612 74H628M714 74H730M816 74H832"/>
+              </g>
+            </svg>
+            <figcaption>Station sequence I used for the individual afterburning-turbojet model. Numbers are a reading order for this page, not a certified station standard.</figcaption>
+          </figure>
+        </section>
+        <section class="study-section" id="model">
+          <div class="study-number">02 — CYCLE MODEL</div>
+          <h2>Same gas model at every station</h2>
+          <div class="process-flow" role="img" aria-label="Turbojet solution sequence from atmosphere and fuel model through component matching to thrust and efficiency maps">
+            <div class="flow-step"><b>01 / ATMOSPHERE</b><span>ISA static pressure and temperature at the flight condition</span></div>
+            <div class="flow-step"><b>02 / GAS</b><span>NASA polynomial cp, then γ from Mayer’s relation</span></div>
+            <div class="flow-step"><b>03 / COMPONENTS</b><span>Adiabatic efficiencies, pressure ratios, and turbine work balance</span></div>
+            <div class="flow-step"><b>04 / PERFORMANCE</b><span>Thrust, impulse, SFC, and efficiency across the envelope</span></div>
+          </div>
+          <p>I solved stagnation relations in the diffuser, compressor pressure ratio and adiabatic efficiency, combustor pressure loss and efficiency, the turbine temperature drop required to drive each compressor, afterburner heat addition, and a nozzle with its own adiabatic efficiency. Mass flow at the nozzle closed the thrust calculation, including the pressure term when the exit was not perfectly expanded.</p>
+          <p>The Python script then mapped thermal, propulsive, and overall efficiency against altitude and speed, compressor delivery temperature, specific fuel consumption against thrust, and the high-pressure compressor map. I also wrote a short improvement note on afterburner use, diffuser area, nozzle temperature limit, and control logic. Those notes are design comments on the coursework engine, not a proposed modification to a flying powerplant.</p>
+          <div class="case-note">I describe the model structure and the quantities it produced. I have not republished a single thrust or SFC figure here, because those values belong to one assumed component map and one design point inside the report.</div>
+        </section>
+        <section class="study-section" id="workshop">
+          <div class="study-number">03 — WORKSHOP ENGINES</div>
+          <h2>Compare the ideal station model with a running engine</h2>
+          <p>With Javier Bolaños Llano I tested an instrumented AMT Olympus HP gas turbine in the propulsion workshop. It is a single-stage centrifugal compressor, an annular combustor burning Jet-A1/JP-8, a single-stage axial turbine, and a convergent nozzle. We recorded stagnation pressure and temperature at the stations, fuel flow, thrust, spool speed, and ambient conditions, then corrected the measurements to a standard day.</p>
+          <p>The nominal study point in the report is 108,000 rpm. We solved the ideal cycle at that speed, repeated the calculation for the other steady speeds we ran, and compared calculated thrust, specific impulse, specific fuel consumption, air mass flow, and jet velocity with the measured traces. Compressor, turbine, and nozzle efficiencies were plotted against speed so the gap between the ideal station model and the rig was visible.</p>
+          <p>In a second workshop report, again with Javier Bolaños Llano, we identified the Honeywell TPE331-10 as installed in the propulsion laboratory and related it to a CASA C-212-class turboprop. The write-up follows the real machine: inlet and diffuser, two centrifugal compressor stages, reverse-flow annular combustor, three-stage turbine, gearbox, and exhaust. For a turboprop, the useful argument is that nozzle kinetic energy should stay small, because the turbine should absorb the gas energy and deliver it to the propeller.</p>
+          <div class="spec-wrap">
+            <table class="spec-table">
+              <caption class="flow-note">Component assumptions used in our TPE331-10 coursework model. They are modelling inputs from the report, not a new engine test.</caption>
+              <thead>
+                <tr><th>Component</th><th>Assumption in the report</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Diffuser</td><td>Adiabatic efficiency 0.95</td></tr>
+                <tr><td>Compressors</td><td>About 0.84 adiabatic efficiency per stage; overall pressure ratio 3.85</td></tr>
+                <tr><td>Combustor</td><td>Pressure ratio 0.93; combustion efficiency 0.92; fuel JP-8</td></tr>
+                <tr><td>Turbine / nozzle</td><td>Adiabatic efficiencies 0.88 and 0.95</td></tr>
+                <tr><td>Aircraft limits used</td><td>Service ceiling 7,925 m; maximum operating speed 370 km/h</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>We estimated equivalent shaft power and fuel flow from the published TPE331 rating chart, then solved one nominal operating point. I do not repeat the report’s algebraic line that writes ESFC as the product of specific consumption and power; the ratings chart already separates equivalent specific fuel consumption from equivalent shaft horsepower, and that is the distinction I use.</p>
+        </section>
+        <section class="study-section" id="cycles">
+          <div class="study-number">04 — OTHER CYCLES</div>
+          <h2>Otto sizing and a closed Stirling cycle</h2>
+          <p>With Carolina Fernández Fernández, Lucía García Varela, and Javier Bolaños Llano I sized an automotive Otto engine in MATLAB. We fixed the design around 77 kW and a displacement of 1,580 cm³, using a Kia Niro 1.6 hybrid as the reference class, with a connecting-rod ratio of 0.3, stoichiometric-rich equivalence ratio 1.2, and a Wiebe combustion model. The sweeps covered cylinder count, bore and stroke, inlet-valve closing delay, exhaust opening advance, geometric compression ratio, and spark advance. The plots of power and brake mean effective pressure were the selection tool; the final table in the report is a coursework optimum for those constraints, not a built engine.</p>
+          <p>Earlier, with Ignacio Javier Hernández García and Ivan Pacheco Mínguez, I studied a Stirling engine: ideal isothermal and isochoric branches, regenerator, a real-gas correction, piston geometry, and a Python p–V diagram. The project closed with a solar-collector concept and a Beale-number estimate of power. It sits beside the gas-turbine work as an external-combustion cycle, where the heat addition is not inside the working gas.</p>
+        </section>
+        <section class="study-section" id="evidence">
+          <div class="study-number">05 — EVIDENCE & LIMITS</div>
+          <h2>Separate coursework models from engine data</h2>
+          <ul>
+            <li><strong>Individual:</strong> afterburning turbojet, Python, October 2024.</li>
+            <li><strong>With Javier Bolaños Llano:</strong> Olympus HP workshop turbojet and TPE331-10 turboprop, October 2024.</li>
+            <li><strong>Team of four:</strong> Otto-cycle automotive engine, October 2024.</li>
+            <li><strong>Team of three:</strong> Stirling cycle, thermodynamics project, April 2024.</li>
+          </ul>
+          <div class="case-note">Workshop comparisons show how our station calculations tracked the rig. They are not a calibration of the engine and they do not replace the manufacturer’s performance deck.</div>
+          <a class="case-next" href="rotary-wing.html">Next case study: Rotary-wing aircraft →</a>
+        </section>
+      </div>
+      <aside class="study-aside" aria-label="Case study navigation">
+        <h2>ON THIS PAGE</h2>
+        <nav class="study-toc"><a href="#challenge">01 Challenge</a><a href="#model">02 Cycle model</a><a href="#workshop">03 Workshop</a><a href="#cycles">04 Other cycles</a><a href="#evidence">05 Evidence</a></nav>
+        <a class="study-source" href="../index.html#projects">Explore all projects ↓</a>
+      </aside>
+    </div>
+  </main>
+  <footer class="case-footer wrap"><a href="../index.html#projects">← All Projects</a><span>Javier Lendínez · Aerospace Engineering</span></footer>
+  <script src="project-pages.js" defer></script>
+</body>
+</html>

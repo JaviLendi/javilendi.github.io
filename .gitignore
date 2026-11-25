@@ -1,0 +1,36 @@
+# Ignore node_modules
+node_modules/
+# Ignore log files
+*.log
+# Ignore temporary files
+*.tmp
+__pycache__/
+*.py[cod]
+# Ignore build output
+dist/
+build/
+# Ignore environment files
+.env
+.env.local
+.env.*.local
+# Ignore IDE specific files
+.vscode/
+.idea/
+# Ignore OS specific files
+.DS_Store
+Thumbs.db
+CV/
+# Keep the high-resolution source model local; the site uses its optimized copy.
+assets/eurofighter-typhoon.stl
+# Keep the original high-resolution STL local; the lite mesh is the published hero fallback.
+assets/eurofighter-typhoon-lite.stl
+!assets/eurofighter-typhoon-lite.stl
+# Ignore selected projects
+projects/selected-projects/*
+!projects/selected-projects/.gitkeep
+UNIVERSITY_PORTFOLIO_PLAN.md
+# Ignore VS Code workspace settings
+.vscode/*
+!.vscode/settings.json
+
+

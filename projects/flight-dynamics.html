@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0f16">
+  <meta name="description" content="A team study of aircraft stability and flight dynamics using linear state-space models, modal analysis, Routh–Hurwitz, transfer functions, Bode response and step response.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Aircraft Stability & Flight Dynamics | Javier Lendínez">
+  <meta property="og:description" content="From linearised cruise-condition models to aircraft dynamic modes and control response, with explicit verification limitations.">
+  <meta property="og:url" content="https://javilendi.github.io/projects/flight-dynamics.html">
+  <meta property="og:image" content="https://javilendi.github.io/assets/og-portfolio.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://javilendi.github.io/projects/flight-dynamics.html">
+  <title>Aircraft Stability & Flight Dynamics | Javier Lendínez</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../case-studies.css">
+  <style>
+    .case-equation { display:block; margin:1.1rem 0; padding:1rem 1.2rem; overflow-x:auto; border:1px solid var(--line,rgba(255,255,255,.12)); border-radius:12px; background:rgba(255,255,255,.035); font:500 1.05rem/1.7 "DM Mono",monospace; color:var(--text,#fff); }
+    .technical-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:1.2rem 0; }
+    .technical-card { padding:1rem; border:1px solid var(--line,rgba(255,255,255,.12)); border-radius:12px; background:rgba(255,255,255,.025); }
+    .technical-card h3 { margin:0 0 .45rem; font-size:.95rem; }
+    .technical-card p { margin:0; font-size:.92rem; }
+    .technical-card code { font-family:"DM Mono",monospace; }
+    .case-subheading { margin:1.5rem 0 .55rem; font-size:1.08rem; }
+    .figure-group { margin-top:1.5rem; }
+    .figure-group > p { max-width:70ch; }
+    .case-gallery { align-items:start; }
+    .case-figure img { display:block; width:100%; height:auto; }
+    .case-note { margin:1.2rem 0; }
+    .verification-list li { margin:.45rem 0; }
+    @media (max-width:650px) { .technical-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="topbar">
+    <a class="logo" href="../index.html" aria-label="Javier Lendínez portfolio">JL<span>.</span></a>
+    <nav id="primary-nav" aria-label="Main navigation"><a href="../index.html#projects">Projects</a><a href="../index.html#github-projects">GitHub</a><a href="../index.html#experience">Experience</a><a href="../index.html#contact">Contact</a></nav>
+    <a class="download" href="../assets/javier-lendinez-cv.pdf" download>Download CV ↓</a>
+    <button class="menu" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+  </header>
+
+  <main id="main-content" class="wrap">
+    <section class="case-hero">
+      <div class="case-breadcrumb"><a href="../index.html">Portfolio</a> / <a href="../index.html#projects">Projects</a> / Flight dynamics</div>
+      <div class="case-kicker">07 / FLIGHT DYNAMICS &amp; CONTROL</div>
+      <h1>Aircraft stability <em>&amp; flight dynamics</em></h1>
+      <p class="case-deck">A team study connecting linear aircraft equations of motion with longitudinal and lateral-directional dynamic modes, stability criteria and control-system response.</p>
+      <div class="case-tags"><span>Python</span><span>State-space modelling</span><span>Eigenvalue analysis</span><span>Routh–Hurwitz</span><span>Transfer functions</span><span>Bode response</span></div>
+      <div class="case-meta">
+        <div><dt>Role</dt><dd>Core contributor · team of four</dd></div>
+        <div><dt>Team</dt><dd>Mario Barrio Alonso, Juan Ramírez Fernández and Begoña Santomé Ferragut</dd></div>
+        <div><dt>Course</dt><dd>Flight Dynamics · M140902</dd></div>
+        <div><dt>Reference condition</dt><dd>40,000 ft · Mach 0.8 · ρ = 0.3045 kg/m³</dd></div>
+      </div>
+    </section>
+
+    <div class="case-layout">
+      <div class="case-content">
+        <section class="study-section" id="challenge">
+          <div class="study-number">01 — THE CHALLENGE</div>
+          <h2>Understand how an aircraft responds to small disturbances</h2>
+          <p>The objective of the study was to examine aircraft stability around a symmetric, steady-cruise reference condition. Rather than analysing the full nonlinear equations of motion directly, the team used a linearised representation based on small perturbations around the selected trim condition.</p>
+          <p>This approach makes it possible to separate the aircraft response into two commonly studied groups: longitudinal motion, associated mainly with forward speed, angle of attack and pitching motion; and lateral-directional motion, associated with sideslip, rolling and yawing motion.</p>
+          <p>I completed the work with Mario Barrio Alonso, Juan Ramírez Fernández and Begoña Santomé Ferragut. My contribution was fundamental to the team project. As the report does not allocate individual calculations by person, I do not attribute a narrower technical task to myself.</p>
+          <div class="case-note">The models are linear approximations valid for small perturbations around the chosen cruise condition. Their conclusions should not automatically be extended to large manoeuvres or substantially different flight conditions.</div>
+        </section>
+
+        <section class="study-section" id="model">
+          <div class="study-number">02 — MODEL &amp; METHOD</div>
+          <h2>Build a state-space representation of the aircraft</h2>
+          <p>The starting point was the linear state-space form. It expresses the time evolution of the perturbation state vector as a function of the current state and the control input:</p>
+          <code class="case-equation">ẋ = F x + B u</code>
+          <p>Here, <code> x </code> is the state vector, <code>u</code> is the control-input vector, <code>F</code> is the system (or dynamics) matrix and <code>B</code> maps the control inputs into the state derivatives. The entries of these matrices are assembled from the aircraft's stability and control derivatives, together with the reference-flight and mass-property data supplied for the exercise.</p>
+
+          <div class="technical-grid">
+            <article class="technical-card">
+              <h3>Longitudinal state vector</h3>
+              <code>x<sub>long</sub> = [u, α, q, θ]<sup>T</sup></code>
+              <p>Forward-speed perturbation, angle-of-attack perturbation, pitch rate and pitch attitude.</p>
+            </article>
+            <article class="technical-card">
+              <h3>Lateral-directional state vector</h3>
+              <code>x<sub>lat</sub> = [v, p, r, φ]<sup>T</sup></code>
+              <p>Lateral-velocity perturbation, roll rate, yaw rate and bank angle.</p>
+            </article>
+          </div>
+
+          <h3 class="case-subheading">A repeatable analysis sequence</h3>
+          <p>The Python workflow was organised to move from the supplied aircraft data to stability and response analyses. Keeping these stages connected is important: the characteristic roots, modal interpretation and control-response plots should all be generated from the same model version.</p>
+          <div class="process-flow" role="img" aria-label="Flight-dynamics analysis workflow: linearise, separate models, analyse stability and evaluate response">
+            <div class="flow-step"><b>01 / LINEARISE</b><span>Represent small perturbations about cruise</span></div>
+            <div class="flow-step"><b>02 / SEPARATE</b><span>Form longitudinal and lateral models</span></div>
+            <div class="flow-step"><b>03 / ANALYSE</b><span>Characteristic roots and stability criteria</span></div>
+            <div class="flow-step"><b>04 / EVALUATE</b><span>Transfer function, Bode and step response</span></div>
+          </div>
+
+          <h3 class="case-subheading">What the Python analysis evaluates</h3>
+          <ul>
+            <li><strong>Characteristic polynomial:</strong> obtained from the system matrix and used to describe the system's natural dynamics.</li>
+            <li><strong>Routh–Hurwitz criterion:</strong> an algebraic stability test applied to the characteristic polynomial, without requiring the roots to be calculated first.</li>
+            <li><strong>Eigenvalues:</strong> the roots associated with the state matrix; their real and imaginary parts describe modal damping or growth and oscillatory behaviour.</li>
+            <li><strong>Modal parameters:</strong> used to interpret the natural modes in terms of damping and oscillation.</li>
+            <li><strong>Control response:</strong> a longitudinal transfer function is evaluated in the frequency domain with a Bode plot and in the time domain with a unit-step response.</li>
+          </ul>
+        </section>
+
+        <section class="study-section" id="modes">
+          <div class="study-number">03 — MODE INTERPRETATION</div>
+          <h2>Connect mathematical roots with aircraft motion</h2>
+          <p>The eigenstructure of the linear models is useful because it turns a set of coupled differential equations into identifiable dynamic behaviours. The team considered the conventional longitudinal and lateral-directional modes listed below.</p>
+          <div class="technical-grid">
+            <article class="technical-card">
+              <h3>Short-period mode</h3>
+              <p>A relatively fast longitudinal oscillation dominated by changes in angle of attack and pitch rate. It is closely associated with the aircraft's immediate pitching response.</p>
+            </article>
+            <article class="technical-card">
+              <h3>Phugoid mode</h3>
+              <p>A slower longitudinal motion involving an exchange between kinetic and potential energy, typically reflected in coupled variations of speed and flight path.</p>
+            </article>
+            <article class="technical-card">
+              <h3>Dutch-roll mode</h3>
+              <p>An oscillatory lateral-directional motion in which yawing and rolling are coupled, commonly accompanied by sideslip.</p>
+            </article>
+            <article class="technical-card">
+              <h3>Roll convergence</h3>
+              <p>A primarily non-oscillatory roll-rate response that decays or grows according to the corresponding real eigenvalue.</p>
+            </article>
+            <article class="technical-card">
+              <h3>Spiral mode</h3>
+              <p>A slower lateral-directional tendency involving bank and heading. Depending on the eigenvalue, the motion may slowly converge or diverge.</p>
+            </article>
+            <article class="technical-card">
+              <h3>Elevator-to-pitch response</h3>
+              <p>The control-response analysis examines how an elevator input is transmitted to the pitch-related output through the longitudinal model.</p>
+            </article>
+          </div>
+          <p>These descriptions explain the physical meaning of the modes considered in the study. They are not, by themselves, a statement that the particular numerical model is stable or that its modal values have been verified.</p>
+
+          <div class="figure-group">
+            <h3 class="case-subheading">Longitudinal and lateral-directional roots</h3>
+            <p>The two root plots are retained as separate figures so that the longitudinal and lateral-directional results can be inspected independently. Their numerical interpretation remains provisional until the plotted roots are regenerated from the matrices used in the report.</p>
+            <div class="case-gallery">
+              <figure class="case-figure">
+                <img src="../assets/case-studies/flight-dynamics/longitudinal-roots.webp" alt="Longitudinal stability-root plots from the flight-dynamics report" width="1600" height="657" loading="lazy">
+                <figcaption><strong>Longitudinal eigenvalue plots.</strong> Original report figure showing the roots associated with the longitudinal model. The plot has not yet been reconciled with the printed system matrix.</figcaption>
+              </figure>
+              <figure class="case-figure">
+                <img src="../assets/case-studies/flight-dynamics/lateral-roots.webp" alt="Lateral-directional stability-root plots from the flight-dynamics report" width="1600" height="656" loading="lazy">
+                <figcaption><strong>Lateral-directional eigenvalue plots.</strong> Original report figure showing the lateral-directional roots. The discrepancy with the printed matrix prevents a validated stability interpretation.</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="figure-group">
+            <h3 class="case-subheading">Frequency-domain and time-domain control response</h3>
+            <p>The Bode and step-response figures illustrate two complementary ways of examining the reported elevator-to-pitch transfer function. The frequency-domain view describes gain and phase as a function of excitation frequency; the time-domain view shows the output following a unit-step input.</p>
+            <div class="case-gallery">
+              <figure class="case-figure">
+                <img src="../assets/case-studies/flight-dynamics/bode-response.webp" alt="Reported Bode magnitude and phase response for the elevator-to-pitch transfer function" width="1600" height="1193" loading="lazy">
+                <figcaption><strong>Bode response.</strong> Reported magnitude and phase response for the elevator-to-pitch transfer function. The axes and calculation still require verification against the source model.</figcaption>
+              </figure>
+              <figure class="case-figure">
+                <img src="../assets/case-studies/flight-dynamics/pitch-step-response.webp" alt="Reported pitch-angle time response following an elevator step input" width="1600" height="792" loading="lazy">
+                <figcaption><strong>Pitch step response.</strong> Reported time response following an elevator step input. The time scale has not yet been reconciled with the model.</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="case-note">These are original report figures included for traceability, not validated outputs. The matrices, eigenvalue tables, Bode response and time response must be regenerated consistently before drawing a stability conclusion.</div>
+        </section>
+
+        <section class="study-section" id="verification">
+          <div class="study-number">04 — VERIFICATION STATUS</div>
+          <h2>Reconcile the model and its reported outputs</h2>
+          <p>The HTML supplied for this case study identifies an important inconsistency: the longitudinal and lateral-directional matrices printed in the report do not reproduce the eigenvalues listed in its results tables. It also records that the printed lateral-directional matrix yields a Dutch-roll pair with a positive real part, whereas the report's conclusion states that the model is stable.</p>
+          <p>This difference matters because the sign of an eigenvalue's real part determines whether the corresponding linear mode decays or grows with time. A positive real part indicates a growing mode in the linear model; it cannot be dismissed while retaining the report's overall stability conclusion.</p>
+          <h3 class="case-subheading">Checks required before validating the results</h3>
+          <ul class="verification-list">
+            <li><strong>Input data:</strong> confirm that the stability and control derivatives, inertia terms and reference-condition values are the intended inputs.</li>
+            <li><strong>Units and scaling:</strong> check that dimensional and non-dimensional derivatives are not mixed and that angular quantities use consistent units.</li>
+            <li><strong>Matrix construction:</strong> compare the equations implemented in Python with the matrices printed in the report, term by term.</li>
+            <li><strong>Model version:</strong> ensure that the characteristic roots, modal tables, transfer function and plots all come from the same matrix set.</li>
+            <li><strong>Response calculation:</strong> verify transfer-function numerator and denominator, input definition, time vector and frequency axes.</li>
+          </ul>
+          <div class="case-note">Until these checks are completed, the report's stability verdict, modal values, Bode response and time response should be treated as unverified. The discrepancy could arise from transcription, scaling, units or the use of different matrix versions; the available HTML does not establish which explanation is correct.</div>
+        </section>
+
+        <section class="study-section" id="reflection">
+          <div class="study-number">05 — ENGINEERING TAKEAWAY</div>
+          <h2>A flight-dynamics result must be reproducible</h2>
+          <p>This project brought together several central tools in aircraft dynamics: linearisation, state-space modelling, characteristic equations, stability criteria, eigenvalue analysis and control-response evaluation. It also highlighted a practical engineering lesson: a plot or a stability statement is only as reliable as the model and input data from which it was generated.</p>
+          <p>The next step is to regenerate the complete analysis from one traceable set of source inputs. The matrices, roots, modal parameters and control-response plots should then be checked against one another before any definitive conclusion is published.</p>
+          <a class="case-next" href="panel-method.html">Next case study: Panel Methods →</a>
+        </section>
+      </div>
+
+      <aside class="study-aside" aria-label="Case study navigation">
+        <h2>ON THIS PAGE</h2>
+        <nav class="study-toc">
+          <a href="#challenge">01 Challenge</a>
+          <a href="#model">02 Model &amp; method</a>
+          <a href="#modes">03 Dynamic modes</a>
+          <a href="#verification">04 Verification</a>
+          <a href="#reflection">05 Takeaway</a>
+        </nav>
+        <a class="study-source" href="../index.html#projects">Explore all projects ↓</a>
+      </aside>
+    </div>
+  </main>
+  <footer class="case-footer wrap"><a href="../index.html#projects">← All Projects</a><span>Javier Lendínez · Aerospace Engineering</span></footer>
+  <script src="project-pages.js" defer></script>
+</body>
+</html>
